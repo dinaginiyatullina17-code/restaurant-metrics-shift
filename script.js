@@ -476,6 +476,36 @@ function checkFinalLinks() {
   showFeedback('final-feedback',allCorrect,'Верно! Для каждой ситуации ты выбрал связанный с ней показатель и подходящее действие.',hint);
 }
 
+function selectRestaurantZone(zone) {
+  const panel = document.getElementById('zone-popover');
+  const card = document.querySelector(`.zone-card[data-zone="${zone}"]`);
+  document.querySelectorAll('.employee-hotspot,.zone-card[data-zone]').forEach(item => {
+    item.classList.toggle('active', item.dataset.zone === zone);
+  });
+  if (!panel || !card) return;
+  panel.innerHTML = card.innerHTML;
+}
+
+function initRestaurantMap() {
+  document.querySelectorAll('.employee-hotspot[data-zone]').forEach(hotspot => {
+    hotspot.addEventListener('click', () => selectRestaurantZone(hotspot.dataset.zone));
+    hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
+    hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
+  });
+  document.querySelectorAll('.zone-card[data-zone]').forEach(card => {
+    const select = () => selectRestaurantZone(card.dataset.zone);
+    card.addEventListener('mouseenter', select);
+    card.addEventListener('focus', select);
+    card.addEventListener('click', select);
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        select();
+      }
+    });
+  });
+}
+
 function completeCourse() {
   const missing = missingTests('summary');
   if (missing.length) {
@@ -526,5 +556,6 @@ document.addEventListener('DOMContentLoaded',() => {
   initSortable();
   initZoneSort('idea-pool','zone-left','zone-right');
   shuffleChildren(document.getElementById('idea-pool'));
+  initRestaurantMap();
 });
 window.addEventListener('load',loadProgress);
