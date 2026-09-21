@@ -40,30 +40,32 @@
       </section>
 
       <div class="content-wrap home-content">
-        <section class="intro-panel intro-pains fade-in">
-          <span class="eyebrow">Зачем тебе показатели</span>
-          <h2>Цифры подсказывают, куда посмотреть на смене</h2>
-          <div class="pain-grid">
-            <article><span>01</span><p>Показатель изменился — заметь это.</p></article>
-            <article><span>02</span><p>По подсказке проверь людей, процессы или заказ.</p></article>
-            <article><span>03</span><p>Выполни конкретное действие и проверь результат.</p></article>
+        <section class="intro-panel shift-intro fade-in">
+          <span class="eyebrow">Представь обычную смену</span>
+          <h2>В ресторане всё связано</h2>
+          <p class="shift-intro-lead">Гость приходит, делает заказ, команда готовит и выдаёт его. Каждый сотрудник влияет на свой участок работы, а ты управляешь всей сменой.</p>
+          <div class="shift-role">
+            <span aria-hidden="true">👀</span>
+            <div><strong>Роль Шифта</strong><p>Увидеть, где что-то пошло не так, направить сотрудника и проверить результат.</p></div>
           </div>
-          <p class="pain-resolution">Тебе не нужно строить сложные отчёты. Курс покажет, что означает каждый показатель и что делать, если он отклонился от цели.</p>
         </section>
 
-        <section class="shift-architecture simple-path fade-in" aria-labelledby="shift-architecture-title">
-          <div class="section-heading"><span class="eyebrow">Вся смена в одной схеме</span><h2 id="shift-architecture-title">Гость сделал заказ — команда его выдала</h2><p>Показатели просто показывают, что происходит на этом пути.</p></div>
-          <div class="order-path" aria-label="Путь заказа и связанные показатели">
-            <article><span class="path-icon" aria-hidden="true">👤</span><b>1. Гость заказал</b><p><strong>Трафик</strong> — сколько заказов.<br><strong>Средний чек</strong> — на какую сумму.</p></article>
-            <i aria-hidden="true">→</i>
-            <article><span class="path-icon" aria-hidden="true">👥</span><b>2. Команда работает</b><p><strong>ITPH</strong> — хватает ли людей.<br><strong>LC</strong> — сколько стоят часы команды.</p></article>
-            <i aria-hidden="true">→</i>
-            <article><span class="path-icon" aria-hidden="true">🍔</span><b>3. Заказ собран</b><p><strong>FC</strong> — продукты и упаковка.<br><strong>SOS</strong> — скорость заказа.</p></article>
-            <i aria-hidden="true">→</i>
-            <article><span class="path-icon" aria-hidden="true">🛍</span><b>4. Заказ выдан</b><p><strong>Гостевой опыт</strong> — захочет ли Гость вернуться.</p></article>
+        <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
+          <div class="section-heading"><span class="eyebrow">Ресторан глазами Шифта</span><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Посмотри на ресторан по зонам. У каждой зоны есть свои показатели и понятные действия.</p></div>
+          <figure class="restaurant-scene"><img src="assets/restaurant-shift-map-v1.png" alt="Ресторан во время смены: сотрудник в зале, кассир, сотрудник кухни, сборщик, сотрудник выдачи и Шифт с планшетом" loading="eager"><figcaption>Шифт видит всю смену и направляет команду там, где появляется отклонение.</figcaption></figure>
+          <div class="zone-map" aria-label="Зоны ресторана и показатели">
+            <article class="zone-card hall"><span>01 · Зал</span><h3>Сотрудник в зале</h3><p>Создаёт комфорт, поддерживает чистоту и общается с Гостями.</p><div><b>Гостевой опыт</b><b>Трафик</b></div></article>
+            <article class="zone-card cash"><span>02 · Заказ</span><h3>Кассир</h3><p>Принимает заказ, помогает с выбором и предлагает дополнительные позиции.</p><div><b>Выручка</b><b>Средний чек</b><b>Трафик</b></div></article>
+            <article class="zone-card kitchen"><span>03 · Кухня</span><h3>Сотрудник кухни</h3><p>Готовит блюда по стандарту и правильно расходует продукты.</p><div><b>Качество блюд</b><b>Food Cost</b><b>Гостевой опыт</b></div></article>
+            <article class="zone-card assembly"><span>04 · Сборка</span><h3>Сотрудник сборки</h3><p>Собирает заказ быстро, правильно и без лишней упаковки.</p><div><b>SOS</b><b>Food Cost</b><b>Гостевой опыт</b></div></article>
+            <article class="zone-card handoff"><span>05 · Выдача</span><h3>Сотрудник выдачи</h3><p>Проверяет заказ и вовремя передаёт его Гостю.</p><div><b>SOS</b><b>Гостевой опыт</b><b>Трафик</b></div></article>
           </div>
-          <div class="one-result"><span>Все заказы за смену дают</span><strong>Выручку</strong><i>−</i><strong>Затраты</strong><i>=</i><strong>Прибыль</strong></div>
-          <p class="path-note"><strong>Твоя задача:</strong> увидеть, где возникло отклонение, выполнить действие из подсказки и снова проверить цифру.</p>
+          <div class="team-layer">
+            <div><span>Вся команда на смене</span><strong>Комплектность · Текучесть · Labor Cost · ITPH</strong><p>Количество людей, их нагрузка и расстановка влияют на работу всех зон.</p></div>
+            <i aria-hidden="true">→</i>
+            <div class="manager-layer"><span>Управляющий сменой</span><strong>Видит → направляет → проверяет</strong><p>Смотрит показатели, находит зону отклонения и даёт конкретное действие.</p></div>
+          </div>
+          <div class="restaurant-result"><span>Результат всех зон</span><div><strong>Выручка</strong><i>−</i><strong>FC, LC, коммунальные услуги и ремонт</strong><i>=</i><strong>Прибыль ресторана</strong></div><small>Маржинальная прибыль → операционная прибыль → EBITDA</small></div>
         </section>
 
         <section class="course-map fade-in" aria-labelledby="course-map-title">
