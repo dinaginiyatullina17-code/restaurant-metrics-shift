@@ -49,7 +49,7 @@
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
           <div class="section-heading"><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Нажми на сотрудника на картинке — появится его карточка.</p></div>
           <figure class="restaurant-scene interactive-scene">
-            <img src="assets/restaurant-shift-map-v5.png" alt="Смена в ресторане: сотрудник зала, кассир с кофемашинами за стойкой, сотрудники кухни и сборки в синих перчатках, единая стойка сборки и выдачи с подносами и управляющий сменой" loading="eager">
+            <img src="assets/restaurant-shift-map-v6.png" alt="Смена в ресторане: сотрудник зала, кассир с одной кофемашиной за стойкой, сотрудники кухни и сборки в синих перчатках, единая стойка сборки и выдачи с подносами и управляющий сменой" loading="eager">
             <button class="employee-hotspot hall" type="button" data-zone="hall" aria-label="Сотрудник в зале"><span>1</span></button>
             <button class="employee-hotspot cash" type="button" data-zone="cash" aria-label="Кассир"><span>2</span></button>
             <button class="employee-hotspot kitchen" type="button" data-zone="kitchen" aria-label="Сотрудник кухни"><span>3</span></button>
@@ -60,12 +60,22 @@
           </figure>
           <div class="zone-popover" id="zone-popover" aria-live="polite"><span>Выбери сотрудника на картинке</span><strong>Здесь появится его карточка</strong></div>
           <section class="team-overview" aria-labelledby="team-overview-title">
-            <div class="team-overview-heading"><span>Когда дело не в одной зоне</span><h3 id="team-overview-title">Шифт смотрит и на команду целиком</h3><p>Показатели на картинке связаны с конкретными сотрудниками. Но нехватка людей или неправильная расстановка влияют сразу на весь ресторан. Здесь Шифт проверяет ещё четыре показателя.</p></div>
-            <div class="team-overview-grid">
-              <article><b>Комплектность</b><p>Хватает ли ресторану сотрудников.</p></article>
-              <article><b>Текучесть</b><p>Стабильна ли команда или люди часто уходят.</p></article>
-              <article><b>Labor Cost</b><p>Сколько ресторан тратит на часы команды.</p></article>
-              <article><b>ITPH</b><p>Соответствует ли количество людей потоку заказов.</p></article>
+            <div class="team-overview-heading"><span>Зона ответственности Шифта</span><h3 id="team-overview-title">Что контролировать, а с чем познакомиться</h3><p>Не все показатели из курса Шифт отслеживает сам. На смене он контролирует ITPH и действия, которые влияют на FC и коммунальные расходы. Остальные показатели важно понимать, чтобы видеть общую картину работы ресторана.</p></div>
+            <div class="responsibility-group direct-control">
+              <h4>Контролирует на смене</h4>
+              <div class="team-overview-grid three-items">
+                <article><b>ITPH</b><p>Сопоставляет количество сотрудников с потоком заказов и меняет расстановку.</p></article>
+                <article><b>Food Cost</b><p>Следит за порциями, списаниями, упаковкой и правильным использованием продуктов.</p></article>
+                <article><b>Коммунальные расходы</b><p>Следит, чтобы оборудование, свет и вода использовались только по необходимости.</p></article>
+              </div>
+            </div>
+            <div class="responsibility-group awareness">
+              <h4>Знакомится в курсе</h4>
+              <div class="team-overview-grid three-items">
+                <article><b>Комплектность</b><p>Показывает, хватает ли ресторану сотрудников.</p></article>
+                <article><b>Текучесть</b><p>Показывает, как часто сотрудники уходят из команды.</p></article>
+                <article><b>Labor Cost</b><p>Показывает затраты ресторана на оплату труда.</p></article>
+              </div>
             </div>
           </section>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div><small>Сначала из выручки вычитают продукты и упаковку, затем оплату труда, затем остальные расходы.</small></div>
