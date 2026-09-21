@@ -493,7 +493,7 @@ function selectRestaurantZone(zone) {
   });
   if (!panel || !data) return;
   const badges = data.metrics.map(metric => `<b>${metric}</b>`).join('');
-  panel.innerHTML = `<span>${data.place}</span><h3>${data.title}</h3><p>${data.text}</p><strong class="metric-caption">Показатели, на которые влияет сотрудник</strong><div class="metric-badges">${badges}</div>`;
+  panel.innerHTML = `<span>${data.place}</span><h3>${data.title}</h3><p>${data.text}</p><strong class="metric-caption">Показатели, на которые влияет</strong><div class="metric-badges">${badges}</div>`;
 }
 
 function initRestaurantMap() {

@@ -40,10 +40,16 @@
       </section>
 
       <div class="content-wrap home-content">
+        <section class="course-hook fade-in">
+          <span class="eyebrow">Смена уже началась</span>
+          <h2>Очередь растёт. Куда смотреть первым?</h2>
+          <p>Заказ может задержаться на кассе, кухне, сборке или выдаче. А иногда проблема не в станции — команде просто не хватает рук.</p>
+          <div class="hook-question"><span aria-hidden="true">?</span><div><strong>Что проверить и кому дать задачу?</strong><p>Показатели помогут быстро найти место сбоя и выбрать действие прямо во время смены.</p></div></div>
+        </section>
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
-          <div class="section-heading"><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Нажми на сотрудника на картинке — появится его карточка. Наведи курсор на карточку — подсветится сотрудник.</p></div>
+          <div class="section-heading"><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Нажми на сотрудника на картинке — появится его карточка.</p></div>
           <figure class="restaurant-scene interactive-scene">
-            <img src="assets/restaurant-shift-map-v4.png" alt="Смена в ресторане: сотрудник зала, кассир, сотрудники кухни и сборки, единая стойка сборки и выдачи с подносами, сотрудник выдачи и управляющий сменой в форме АУП" loading="eager">
+            <img src="assets/restaurant-shift-map-v5.png" alt="Смена в ресторане: сотрудник зала, кассир с кофемашинами за стойкой, сотрудники кухни и сборки в синих перчатках, единая стойка сборки и выдачи с подносами и управляющий сменой" loading="eager">
             <button class="employee-hotspot hall" type="button" data-zone="hall" aria-label="Сотрудник в зале"><span>1</span></button>
             <button class="employee-hotspot cash" type="button" data-zone="cash" aria-label="Кассир"><span>2</span></button>
             <button class="employee-hotspot kitchen" type="button" data-zone="kitchen" aria-label="Сотрудник кухни"><span>3</span></button>
@@ -53,9 +59,15 @@
             <figcaption>Нажимай на метки сотрудников, чтобы увидеть их влияние на показатели.</figcaption>
           </figure>
           <div class="zone-popover" id="zone-popover" aria-live="polite"><span>Выбери сотрудника на картинке</span><strong>Здесь появится его карточка</strong></div>
-          <div class="team-layer">
-            <div><span>Показатели всей команды</span><strong>Комплектность · Текучесть · Labor Cost · ITPH</strong><p>Они относятся ко всей смене: показывают, хватает ли людей, как распределена нагрузка и сколько стоят часы команды.</p></div>
-          </div>
+          <section class="team-overview" aria-labelledby="team-overview-title">
+            <div class="team-overview-heading"><span>Когда дело не в одной зоне</span><h3 id="team-overview-title">Шифт смотрит и на команду целиком</h3><p>Показатели на картинке связаны с конкретными сотрудниками. Но нехватка людей или неправильная расстановка влияют сразу на весь ресторан. Здесь Шифт проверяет ещё четыре показателя.</p></div>
+            <div class="team-overview-grid">
+              <article><b>Комплектность</b><p>Хватает ли ресторану сотрудников.</p></article>
+              <article><b>Текучесть</b><p>Стабильна ли команда или люди часто уходят.</p></article>
+              <article><b>Labor Cost</b><p>Сколько ресторан тратит на часы команды.</p></article>
+              <article><b>ITPH</b><p>Соответствует ли количество людей потоку заказов.</p></article>
+            </div>
+          </section>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div><small>Сначала из выручки вычитают продукты и упаковку, затем оплату труда, затем остальные расходы.</small></div>
         </section>
 
