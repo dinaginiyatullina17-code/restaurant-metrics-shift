@@ -43,7 +43,7 @@
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
           <div class="section-heading"><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Нажми на сотрудника на картинке — появится его карточка. Наведи курсор на карточку — подсветится сотрудник.</p></div>
           <figure class="restaurant-scene interactive-scene">
-            <img src="assets/restaurant-shift-map-v3.png" alt="Смена в ресторане: сотрудник зала, кассир, сотрудники кухни и сборки, сотрудник выдачи за стойкой с подносами и управляющий сменой в форме АУП" loading="eager">
+            <img src="assets/restaurant-shift-map-v4.png" alt="Смена в ресторане: сотрудник зала, кассир, сотрудники кухни и сборки, единая стойка сборки и выдачи с подносами, сотрудник выдачи и управляющий сменой в форме АУП" loading="eager">
             <button class="employee-hotspot hall" type="button" data-zone="hall" aria-label="Сотрудник в зале"><span>1</span></button>
             <button class="employee-hotspot cash" type="button" data-zone="cash" aria-label="Кассир"><span>2</span></button>
             <button class="employee-hotspot kitchen" type="button" data-zone="kitchen" aria-label="Сотрудник кухни"><span>3</span></button>
@@ -53,17 +53,8 @@
             <figcaption>Нажимай на метки сотрудников, чтобы увидеть их влияние на показатели.</figcaption>
           </figure>
           <div class="zone-popover" id="zone-popover" aria-live="polite"><span>Выбери сотрудника на картинке</span><strong>Здесь появится его карточка</strong></div>
-          <div class="zone-map" aria-label="Зоны ресторана и показатели">
-            <article class="zone-card hall" data-zone="hall" tabindex="0"><span>01 · Зал</span><h3>Сотрудник в зале</h3><p>Создаёт комфорт, поддерживает чистоту и общается с Гостями.</p><div><b>Гостевой опыт</b><b>Трафик</b></div></article>
-            <article class="zone-card cash" data-zone="cash" tabindex="0"><span>02 · Заказ</span><h3>Кассир</h3><p>Принимает заказ, помогает с выбором и предлагает дополнительные позиции.</p><div><b>Выручка</b><b>Средний чек</b><b>Трафик</b></div></article>
-            <article class="zone-card kitchen" data-zone="kitchen" tabindex="0"><span>03 · Кухня</span><h3>Сотрудник кухни</h3><p>Готовит блюда по стандарту и правильно использует продукты.</p><div><b>Качество блюд</b><b>Food Cost</b><b>Гостевой опыт</b></div></article>
-            <article class="zone-card assembly" data-zone="assembly" tabindex="0"><span>04 · Сборка</span><h3>Сотрудник сборки</h3><p>Быстро и правильно собирает заказ.</p><div><b>SOS</b><b>Food Cost</b><b>Гостевой опыт</b></div></article>
-            <article class="zone-card handoff" data-zone="handoff" tabindex="0"><span>05 · Выдача</span><h3>Сотрудник выдачи</h3><p>Проверяет заказ и вовремя передаёт его Гостю.</p><div><b>SOS</b><b>Гостевой опыт</b><b>Трафик</b></div></article>
-          </div>
           <div class="team-layer">
-            <div><span>Вся команда на смене</span><strong>Комплектность · Текучесть · Labor Cost · ITPH</strong><p>Количество людей, их нагрузка и расстановка влияют на работу всех зон.</p></div>
-            <i aria-hidden="true">→</i>
-            <div class="manager-layer zone-card" data-zone="manager" tabindex="0"><span>Управляющий сменой</span><strong>Видит → направляет → проверяет</strong><p>Смотрит показатели, находит проблемную зону и говорит сотруднику, что нужно проверить или исправить сейчас.</p></div>
+            <div><span>Показатели всей команды</span><strong>Комплектность · Текучесть · Labor Cost · ITPH</strong><p>Они относятся ко всей смене: показывают, хватает ли людей, как распределена нагрузка и сколько стоят часы команды.</p></div>
           </div>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div><small>Сначала из выручки вычитают продукты и упаковку, затем оплату труда, затем остальные расходы.</small></div>
         </section>

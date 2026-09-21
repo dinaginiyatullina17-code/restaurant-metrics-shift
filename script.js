@@ -476,14 +476,24 @@ function checkFinalLinks() {
   showFeedback('final-feedback',allCorrect,'Верно! Для каждой ситуации ты выбрал связанный с ней показатель и подходящее действие.',hint);
 }
 
+const RESTAURANT_ZONE_DATA = {
+  hall: { place:'01 · Зал', title:'Сотрудник в зале', text:'Создаёт комфорт, поддерживает чистоту и общается с Гостями.', metrics:['Гостевой опыт','Трафик'] },
+  cash: { place:'02 · Заказ', title:'Кассир', text:'Принимает заказ, помогает с выбором и предлагает дополнительные позиции.', metrics:['Выручка','Средний чек','Трафик'] },
+  kitchen: { place:'03 · Кухня', title:'Сотрудник кухни', text:'Готовит блюда по стандарту и правильно использует продукты.', metrics:['Качество блюд','Food Cost','Гостевой опыт'] },
+  assembly: { place:'04 · Сборка', title:'Сотрудник сборки', text:'Быстро и правильно собирает заказ.', metrics:['SOS','Food Cost','Гостевой опыт'] },
+  handoff: { place:'05 · Выдача', title:'Сотрудник выдачи', text:'Проверяет заказ и вовремя передаёт его Гостю.', metrics:['SOS','Гостевой опыт','Трафик'] },
+  manager: { place:'Управляющий сменой', title:'Видит → направляет → проверяет', text:'Смотрит показатели, находит проблемную зону и говорит сотруднику, что нужно проверить или исправить сейчас.', metrics:['Все показатели смены'] }
+};
+
 function selectRestaurantZone(zone) {
   const panel = document.getElementById('zone-popover');
-  const card = document.querySelector(`.zone-card[data-zone="${zone}"]`);
-  document.querySelectorAll('.employee-hotspot,.zone-card[data-zone]').forEach(item => {
+  const data = RESTAURANT_ZONE_DATA[zone];
+  document.querySelectorAll('.employee-hotspot').forEach(item => {
     item.classList.toggle('active', item.dataset.zone === zone);
   });
-  if (!panel || !card) return;
-  panel.innerHTML = card.innerHTML;
+  if (!panel || !data) return;
+  const badges = data.metrics.map(metric => `<b>${metric}</b>`).join('');
+  panel.innerHTML = `<span>${data.place}</span><h3>${data.title}</h3><p>${data.text}</p><strong class="metric-caption">Показатели, на которые влияет сотрудник</strong><div class="metric-badges">${badges}</div>`;
 }
 
 function initRestaurantMap() {
@@ -491,18 +501,6 @@ function initRestaurantMap() {
     hotspot.addEventListener('click', () => selectRestaurantZone(hotspot.dataset.zone));
     hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
     hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
-  });
-  document.querySelectorAll('.zone-card[data-zone]').forEach(card => {
-    const select = () => selectRestaurantZone(card.dataset.zone);
-    card.addEventListener('mouseenter', select);
-    card.addEventListener('focus', select);
-    card.addEventListener('click', select);
-    card.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        select();
-      }
-    });
   });
 }
 

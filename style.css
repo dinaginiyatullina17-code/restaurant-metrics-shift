@@ -664,3 +664,11 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
   .final-chain { padding: 22px; }
   .final-chain-result { align-items: stretch; flex-direction: column; text-align: center; }
 }
+
+/* Interactive employee card: metrics are the visual focus */
+.zone-popover .metric-caption{display:block;margin:0 0 9px;color:#5c43cf;font-family:var(--font-body);font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.zone-popover .metric-badges{display:flex;flex-wrap:wrap;gap:8px}
+.zone-popover .metric-badges b{padding:8px 12px;border-radius:999px;color:#fff;background:#6d56df;font-size:13px;box-shadow:0 3px 9px rgba(92,67,207,.2)}
+.team-layer{grid-template-columns:1fr}
+.team-layer>div{border-left:7px solid #7968e8}
+.team-layer>i{display:none}
