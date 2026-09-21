@@ -31,11 +31,11 @@
 
   <main>
     <div class="page active" id="page-home">
-      <section class="hero-placeholder" aria-label="Управляющая сменой анализирует показатели ресторана на планшете">
+      <section class="hero-placeholder" aria-label="Шифт смотрит показатели ресторана на планшете">
         <div class="hero-content">
           <span class="eyebrow light">Для Шифт смены</span>
           <h1>Показатели<br>ресторана</h1>
-          <p>Увидел изменение → проверил причину → сделал</p>
+          <p>Увидел отклонение<br>Проверил → сделал</p>
         </div>
       </section>
 
@@ -51,27 +51,19 @@
           <p class="pain-resolution">Тебе не нужно строить сложные отчёты. Курс покажет, что означает каждый показатель и что делать, если он отклонился от цели.</p>
         </section>
 
-        <section class="shift-architecture fade-in" aria-labelledby="shift-architecture-title">
-          <div class="section-heading">
-            <span class="eyebrow">Карта показателей</span>
-            <h2 id="shift-architecture-title">Как устроен результат смены</h2>
-            <p>На показатели влияют четыре понятные зоны. Если цифра изменилась, начни проверку с них.</p>
-          </div>
-          <div class="shift-inputs" aria-label="Что влияет на показатели ресторана">
-            <article class="shift-input guests"><span class="shift-symbol" aria-hidden="true">● ● ●</span><h3>Гости</h3><p>Сколько заказов пришло и вернутся ли Гости снова.</p><strong>Влияют на трафик и выручку</strong></article>
-            <article class="shift-input team"><span class="shift-symbol" aria-hidden="true">♟ ♟</span><h3>Команда</h3><p>Сколько сотрудников на смене и как они расставлены.</p><strong>Влияет на SOS, LC и ITPH</strong></article>
-            <article class="shift-input kitchen"><span class="shift-symbol" aria-hidden="true">☰</span><h3>Сборка</h3><p>Как быстро и правильно готовим блюда и собираем заказ.</p><strong>Влияет на качество, SOS и FC</strong></article>
-            <article class="shift-input handoff"><span class="shift-symbol" aria-hidden="true">▱</span><h3>Выдача</h3><p>Как быстро и в каком виде заказ получает Гость.</p><strong>Влияет на SOS и Гостевой опыт</strong></article>
-          </div>
-          <div class="shift-arrow" aria-hidden="true">↓</div>
-          <div class="metric-chain" aria-label="Связь основных показателей">
-            <div><span>На смене видим</span><strong>Трафик · Средний чек · SOS · FC · LC · ITPH</strong></div>
+        <section class="shift-architecture simple-path fade-in" aria-labelledby="shift-architecture-title">
+          <div class="section-heading"><span class="eyebrow">Вся смена в одной схеме</span><h2 id="shift-architecture-title">Гость сделал заказ — команда его выдала</h2><p>Показатели просто показывают, что происходит на этом пути.</p></div>
+          <div class="order-path" aria-label="Путь заказа и связанные показатели">
+            <article><span class="path-icon" aria-hidden="true">👤</span><b>1. Гость заказал</b><p><strong>Трафик</strong> — сколько заказов.<br><strong>Средний чек</strong> — на какую сумму.</p></article>
             <i aria-hidden="true">→</i>
-            <div><span>Получаем</span><strong>Выручку и Гостевой опыт</strong></div>
+            <article><span class="path-icon" aria-hidden="true">👥</span><b>2. Команда работает</b><p><strong>ITPH</strong> — хватает ли людей.<br><strong>LC</strong> — сколько стоят часы команды.</p></article>
             <i aria-hidden="true">→</i>
-            <div><span>Итог ресторана</span><strong>Прибыль</strong></div>
+            <article><span class="path-icon" aria-hidden="true">🍔</span><b>3. Заказ собран</b><p><strong>FC</strong> — продукты и упаковка.<br><strong>SOS</strong> — скорость заказа.</p></article>
+            <i aria-hidden="true">→</i>
+            <article><span class="path-icon" aria-hidden="true">🛍</span><b>4. Заказ выдан</b><p><strong>Гостевой опыт</strong> — захочет ли Гость вернуться.</p></article>
           </div>
-          <div class="shift-rule"><b>Правило курса</b><span>Увидел отклонение</span><i>→</i><span>Проверил подсказанные зоны</span><i>→</i><span>Сделал действие</span></div>
+          <div class="one-result"><span>Все заказы за смену дают</span><strong>Выручку</strong><i>−</i><strong>Затраты</strong><i>=</i><strong>Прибыль</strong></div>
+          <p class="path-note"><strong>Твоя задача:</strong> увидеть, где возникло отклонение, выполнить действие из подсказки и снова проверить цифру.</p>
         </section>
 
         <section class="course-map fade-in" aria-labelledby="course-map-title">
@@ -133,11 +125,7 @@
           </div>
         </details>
 
-        <section class="lesson-block fade-in">
-
-          <p class="strong-lead">В Brave&amp;Bold ты отслеживаешь, выполняет ли ресторан цель по финансовой выручке.</p>
-          <p>Финансовую выручку рассчитывают аналитики, а цель утверждает руководство компании.</p>
-        </section>
+        <section class="lesson-block fade-in"><h2>Что нужно делать Шифту</h2><p class="strong-lead">Открой Brave&amp;Bold и сравни фактическую выручку с целью.</p><div class="do-this"><span>Если выручка ниже цели</span><ol><li>Проверь: стало меньше заказов или снизилась сумма заказа.</li><li>Если меньше заказов — смотри трафик.</li><li>Если сумма ниже — смотри средний чек.</li></ol></div></section>
 
         <figure class="report-figure fade-in">
           <figcaption>Выполнение финансового плана в Brave&amp;Bold</figcaption>
@@ -150,16 +138,16 @@
           <div class="binary-choice" data-choice-group>
             <button type="button" onclick="answerChoice(this, true, 'income-feedback', 'Верно! Действуй по порядку: сравни с целью, проверь трафик и средний чек, затем дай команде конкретную задачу.')">Сравнить продажи с целью, проверить трафик и средний чек, затем дать команде конкретную задачу</button>
             <button type="button" onclick="answerChoice(this, false, 'income-feedback', '', 'Само ожидание не изменит результат. Пока смена продолжается, важно определить причину отклонения и выбрать конкретное действие.')">Дождаться закрытия дня: выводы можно делать только после завершения смены</button>
-            <button type="button" onclick="answerChoice(this, false, 'income-feedback', '', 'Снижение цели скроет отклонение, но не поможет ресторану улучшить результат. Нужны анализ причины и действие команды.')">Скорректировать цель до текущего прогноза, чтобы убрать отклонение</button>
+            <button type="button" onclick="answerChoice(this, false, 'income-feedback', '', 'Цель менять нельзя. Проверь трафик и средний чек, затем дай команде конкретную задачу.')">Скорректировать цель до текущего прогноза, чтобы убрать отклонение</button>
           </div>
           <div class="feedback-box" id="income-feedback" aria-live="polite"></div>
         </section>
 
         <section class="lesson-block fade-in">
-          <p class="strong-lead">Твоя задача — ежедневно достигать цели по выручке на своей смене. Только тогда твой ресторан выполнит ежемесячный план.</p>
-          <p>Отслеживать выручку тебе также помогает PLS: система прогнозирует продажи, учитывает фактическую выручку и показывает, на сколько процентов ресторан идёт выше или ниже плана. При включённой автокорректировке PLS сама пересчитывает количество заготовок, а при необходимости процент и количество можно скорректировать вручную.</p>
+          <p class="strong-lead">Brave&amp;Bold показывает результат. PLS помогает подготовиться к потоку заказов.</p>
+          <p>PLS прогнозирует продажи и подсказывает количество заготовок. Следи за фактом: если поток изменился, проверь подсказку системы и скорректируй работу.</p>
           <div class="course-note-text"><p><strong>Дальше по треку тебя ждёт отдельный курс «Система PLS».</strong> В нём ты подробнее разберёшь, как работать с прогнозом продаж, автокорректировкой и ручными изменениями.</p></div>
-          <p>А сейчас разберемся, как ты можешь влиять на достижение цели по выручке.</p>
+          <p>Дальше разберём две причины изменения выручки: трафик и средний чек.</p>
         </section>
         <div class="chapter-nav"><button class="btn-secondary" type="button" onclick="navigateTo('home')">К содержанию</button><button class="btn-next" type="button" onclick="navigateTo('revenue')">Следующая глава →</button></div>
       </div>
@@ -210,29 +198,29 @@
           <div class="binary-choice" data-choice-group>
             <button type="button" onclick="answerChoice(this, true, 'average-check-feedback', 'Верно! При стабильном трафике причина находится в среднем чеке. После проверки его составляющих можно выбрать точный фокус для команды.')">Проверить наполненность и стоимость блюд в заказе, затем скорректировать фокус продаж</button>
             <button type="button" onclick="answerChoice(this, false, 'average-check-feedback', '', 'Привлечение новых Гостей может помочь в будущем, но по условию трафик стабилен. Сначала разбери причину снижения среднего чека.')">Сразу направить все усилия на увеличение трафика</button>
-            <button type="button" onclick="answerChoice(this, false, 'average-check-feedback', '', 'Общее требование продавать больше не показывает команде, что именно нужно изменить. Сначала определи: просела наполненность или стоимость блюд.')">Попросить команду продавать больше без дополнительного анализа</button>
+            <button type="button" onclick="answerChoice(this, false, 'average-check-feedback', '', 'Фраза «продавать больше» не даёт понятного действия. Проверь наполненность и стоимость блюд, затем назови команде конкретный фокус.')">Просто попросить команду продавать больше</button>
           </div>
           <div class="feedback-box" id="average-check-feedback" aria-live="polite"></div>
         </section>
 
         <section class="lesson-block fade-in">
-          <h2>Что помогает Гостям возвращаться</h2>
-          <p>Трафик растёт, когда новые Гости приходят, а постоянные возвращаются. Возвращаться им помогает хороший Гостевой опыт.</p>
+          <h2>Почему Гость возвращается</h2>
+          <p>Гость вернётся, если заказ был быстрым, вкусным и правильным, а в ресторане было чисто и приятно.</p>
         </section>
 
         <section class="experience-flow fade-in" aria-labelledby="experience-flow-title">
-          <div class="experience-flow-heading"><span>Пять факторов</span><h2 id="experience-flow-title">От действий на смене — к Гостевому опыту</h2></div>
+          <div class="experience-flow-heading"><span>Пять проверок</span><h2 id="experience-flow-title">Если Гостевой опыт снизился</h2></div>
           <div class="experience-factors" id="guest-factors">
-            <article><span class="factor-dot"></span><h3>Локальный маркетинг</h3><p>Ты организуешь работу промоутеров и помогаешь команде превратить визит по акции в желание вернуться.</p></article>
-            <article><span class="factor-dot"></span><h3>Скорость</h3><p>Ты управляешь расстановкой, заготовками, обратной связью и обучением команды.</p></article>
-            <article><span class="factor-dot"></span><h3>Качество блюд</h3><p>Ты контролируешь приготовление и сборку: быстро — не значит в ущерб качеству.</p></article>
-            <article><span class="factor-dot"></span><h3>Гостеприимство</h3><p>Ты задаёшь стандарт общения и даёшь команде обратную связь.</p></article>
-            <article><span class="factor-dot"></span><h3>Комфорт и безопасность</h3><p>Ты контролируешь чистоту, комфорт в ресторане и безопасность пищи.</p></article>
+            <article><span class="factor-dot"></span><h3>Промо</h3><p>Промоутер на месте и знает задачу?</p></article>
+            <article><span class="factor-dot"></span><h3>Скорость</h3><p>Заказы выдаём не дольше цели?</p></article>
+            <article><span class="factor-dot"></span><h3>Качество</h3><p>Блюда приготовлены и собраны правильно?</p></article>
+            <article><span class="factor-dot"></span><h3>Общение</h3><p>Команда приветлива с Гостями?</p></article>
+            <article><span class="factor-dot"></span><h3>Чистота</h3><p>В ресторане чисто, комфортно и безопасно?</p></article>
           </div>
           <div class="experience-result-arrow" aria-hidden="true">↓</div>
           <div class="guest-experience">
             <span>Общий результат</span><h3>Гостевой опыт</h3>
-            <p>Эти факторы формируют впечатление от ресторана. Чем лучше Гостевой опыт, тем больше лояльных Гостей возвращается и тем выше трафик.</p>
+            <p>Найди слабое место, исправь его и проверь результат. Хороший опыт помогает Гостям возвращаться.</p>
           </div>
           <section class="bonus-impact" aria-labelledby="bonus-impact-title">
             <div class="bonus-impact-heading"><span>Почему это важно для тебя</span><div><h3 id="bonus-impact-title">Общий результат влияет и на твой результат</h3><p>Гостевой опыт важен не только для возвращения Гостей и трафика. Выполнение цели по этому показателю учитывается и в премии управляющего сменой.</p></div></div>
@@ -284,10 +272,9 @@
       <div class="content-wrap">
         <section class="definition-card fade-in"><span>Затраты</span><p>Затраты — это средства, которые потратили на продукцию и ее производство, аренду, коммунальные услуги, зарплату сотрудникам и т.д.</p></section>
         <section class="lesson-block fade-in">
-          <p>Директор видит все затраты ресторана в статьях ежемесячного отчета, который называется “P&amp;L”, или “Отчет о прибылях и убытках”.</p>
-          <p>В затраты ресторана входит несколько статей. Ты, как управляющий сменой, влияешь на некоторые из них:</p>
+          <h2>На смене контролируй четыре группы затрат</h2><p>Шифту не нужно собирать P&amp;L. Нужно выполнять действия, которые не дают затратам расти:</p>
           <ul class="cost-list"><li><strong>FC</strong><span>затраты на производство продукции (Food Cost, или FC);</span></li><li><strong>LC</strong><span>затраты на оплату труда сотрудников (Labor Cost, или LC);</span></li><li><strong>₽</strong><span>коммунальные расходы;</span></li><li><strong>↗</strong><span>расходы на различный ремонт (Прочие затраты).</span></li></ul>
-          <p>Сейчас подробнее поговорим про эти показатели.</p>
+          <p>Дальше — готовые проверки по каждой группе.</p>
         </section>
 
         <section class="lesson-block fade-in"><h2>Food Cost (FC)</h2><p><strong>Что показывает:</strong> сколько ресторан тратит на продукты, упаковку и другие производственные расходы.</p><div class="compare-grid"><article class="metric-card"><span class="metric-label">Прямой FC</span><p>Продукты и упаковка, которые использовали для заказа.</p></article><article class="metric-card accent"><span class="metric-label">Прочий FC</span><p>Списания, питание сотрудников, недостачи и излишки.</p></article></div><div class="do-this"><span>Что делать на смене</span><ol><li>Следить за порциями и правильным приготовлением.</li><li>Не допускать лишних списаний и расхода упаковки.</li><li>Контролировать учёт продукции.</li></ol></div></section>
@@ -314,15 +301,15 @@
       <header class="chapter-hero chapter-brown"><div class="chapter-hero-inner"><span class="chapter-index">04 / 06</span><h1>Как действия смены<br>влияют на прибыль</h1><p>Что остаётся после затрат ресторана</p></div></header>
       <div class="content-wrap">
         <section class="definition-card profit-definition fade-in">
-          <span>Главный показатель эффективности ресторана</span>
+          <span>Что остаётся у ресторана после расходов</span>
           <strong class="profit-keyword">Прибыль</strong>
           <p>Сумма, которая остаётся после вычета всех расходов из доходов.</p>
         </section>
-        <p class="fade-in">Есть три вида прибыли. На каждую из них твои решения на смене влияют по-разному.</p>
+        <p class="fade-in">Запоминать расчёты не нужно. Запомни, какие действия смены влияют на каждый результат.</p>
         <section class="profit-stack fade-in" aria-label="Три вида прибыли">
-          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p>Маржинальная прибыль, или маржа, — то, что остаётся от выручки после вычета Food Cost (FC): затрат на продукты, упаковку и других производственных затрат. Маржу считают в рублях или процентах от выручки.</p><p class="management-impact">На смене ты влияешь на маржу, когда работаешь с выручкой и контролируешь использование продуктов, упаковки, списания и другие составляющие FC.</p></div></article>
-          <article><span>02</span><div><h2>Операционная прибыль</h2><p>Операционная прибыль — то, что остаётся от маржи после вычета Labor Cost (LC): зарплат, премий, отпусков и больничных сотрудников.</p><p class="management-impact">На смене ты влияешь на операционную прибыль через маржу и отработанные часы команды: корректируешь состав смены и контролируешь отметки в Биосмарт.</p></div></article>
-          <article><span>03</span><div><h2>EBITDA</h2><p>EBITDA — прибыль, которую получает ресторан после вычета из выручки затрат на производство продукции, зарплат сотрудников, аренды, маркетинговых и прочих затрат.</p><p class="management-impact">На смене ты влияешь на EBITDA, когда поддерживаешь выручку, контролируешь FC и LC, экономно используешь ресурсы и бережёшь оборудование.</p></div></article>
+          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p><strong>Просто:</strong> из выручки вычли продукты и упаковку — FC.</p><p class="management-impact"><strong>Твоё действие:</strong> выполняй цель по выручке, контролируй порции, упаковку и списания.</p></div></article>
+          <article><span>02</span><div><h2>Операционная прибыль</h2><p><strong>Просто:</strong> из маржи вычли оплату часов команды — LC.</p><p class="management-impact"><strong>Твоё действие:</strong> сопоставляй количество сотрудников с потоком заказов и проверяй отметки в Биосмарт.</p></div></article>
+          <article><span>03</span><div><h2>EBITDA</h2><p><strong>Просто:</strong> из результата вычли остальные расходы ресторана.</p><p class="management-impact"><strong>Твоё действие:</strong> экономно используй ресурсы и следи за оборудованием.</p></div></article>
         </section>
         <section class="lesson-block fade-in"><p>На схеме показано, какие затраты последовательно вычитаются из выручки и какой вид прибыли остаётся на каждом этапе.</p></section>
         <section class="profit-flow fade-in" id="profit-formulas" aria-label="Последовательная схема расчёта прибыли">
@@ -347,24 +334,24 @@
       <header class="chapter-hero chapter-blue"><div class="chapter-hero-inner"><span class="chapter-index">05 / 06</span><h1>Производительность<br>труда</h1><p>ITPH показывает нагрузку команды</p></div></header>
       <div class="content-wrap wide-content">
         <section class="definition-card fade-in"><p><strong>ITPH показывает нагрузку команды:</strong> сколько позиций она продаёт за один отработанный час.</p><p><strong>Где смотреть:</strong> в Brave&amp;Bold.</p></section>
-        <section class="formula-card fade-in"><span>Формула ITPH</span><div><strong>Количество проданных за период позиций</strong><i>÷</i><strong>Отработанные часы за период</strong></div></section>
-        <section class="exercise-card calc-card fade-in"><span class="eyebrow">Мини-задача</span><p>За 2 часа ресторан продал 126 позиций. За этот период команда отработала 6 часов. Рассчитай ITPH.</p><label for="itph-answer">Введи результат</label><div class="calc-row"><input id="itph-answer" inputmode="decimal" autocomplete="off" placeholder="ITPH"><button class="btn-check" type="button" onclick="checkItphAnswer()">Проверить</button></div><div class="feedback-box" id="itph-feedback" aria-live="polite"></div></section>
+        <section class="formula-card fade-in"><span>Как система получает ITPH</span><div><strong>Проданные позиции</strong><i>÷</i><strong>Часы команды</strong></div><p>Самостоятельно считать не нужно: сравни план и факт в Brave&amp;Bold.</p></section>
+        <section class="exercise-card fade-in"><span class="eyebrow">Ситуация на смене</span><p><strong>Фактический ITPH выше плана, на сборке растёт очередь.</strong> Что сделать первым?</p><div class="binary-choice" data-choice-group><button type="button" onclick="answerChoice(this, true, 'itph-feedback', 'Верно! Высокий ITPH вместе с очередью показывает перегрузку. Сначала усили загруженную станцию.')">Усилить сборку опытным сотрудником по SEEF</button><button type="button" onclick="answerChoice(this, false, 'itph-feedback', '', 'Команда уже перегружена. Если отпустить сотрудника, очередь и SOS станут хуже.')">Отпустить одного сотрудника раньше</button><button type="button" onclick="answerChoice(this, false, 'itph-feedback', '', 'Ждать не нужно: очередь уже показывает, где требуется действие.')">Ничего не менять до конца часа</button></div><div class="feedback-box" id="itph-feedback" aria-live="polite"></div></section>
         <section class="lesson-block fade-in"><p>В Brave&amp;Bold можно сравнить запланированный и фактический ITPH по часам работы ресторана.</p></section>
         <figure class="report-figure fade-in">
           <figcaption>Плановый и фактический ITPH по часам</figcaption>
           <div class="report-image-scroll" tabindex="0" aria-label="Таблицу можно прокручивать по горизонтали"><img class="report-image report-image-wide" src="assets/brave-itph-hours.png" alt="Строка ITPH с плановыми и фактическими значениями по часам в Brave&amp;Bold" loading="lazy"></div>
         </figure>
-        <aside class="impact-card itph-impact fade-in"><span>Связь с прибылью</span><strong>ITPH помогает удерживать баланс между загрузкой команды и затратами на труд.</strong><p>Если сотрудников больше, чем требует поток заказов, ресторан оплачивает лишние часы и увеличивает LC. Если людей недостаточно, команда перегружается, снижаются скорость и качество обслуживания, а вместе с ними могут снижаться Гостевой опыт, трафик и выручка.</p></aside>
+        <aside class="impact-card itph-impact fade-in"><span>Запомни</span><strong>Высокий ITPH — команда перегружена. Низкий ITPH — людей может быть больше, чем нужно.</strong><p>Смотри одновременно на ITPH, очередь и загрузку станций. После действия снова проверь цифры.</p></aside>
         <section class="exercise-card fade-in"><span class="eyebrow">Примени SEEF</span><h2>Как скорректировать расстановку?</h2><p>Во время пика на сборке заказов растёт очередь. Там работает новый сотрудник, а опытный сотрудник на менее загруженной станции завершил основные задачи. Как использовать SEEF?</p><div class="binary-choice" data-choice-group><button type="button" onclick="answerChoice(this, true, 'seef-recall-feedback', 'Верно! Расстановка должна учитывать текущую загрузку станций и навыки сотрудников: опытный сотрудник усиливает западающую зону, а новичок получает подходящую роль и поддержку.')">Перевести опытного сотрудника на сборку, а новичку дать подходящую задачу с учётом его навыков</button><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Фиксированная расстановка не учитывает изменившуюся загрузку. SEEF помогает вовремя перераспределять команду.')">Сохранить первоначальную расстановку до конца смены, чтобы не нарушать план</button><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Перевод всей команды может создать дефицит на других станциях. Нужно точечно усилить западающую зону с учётом навыков.')">Перевести на сборку всех свободных сотрудников независимо от их навыков</button></div><div class="feedback-box" id="seef-recall-feedback" aria-live="polite"></div></section>
         <section class="lesson-block itph-management-intro fade-in"><h2>Что делать по ITPH</h2><div class="do-this"><span>Действуй по ситуации</span><ol><li><strong>Факт выше плана:</strong> команда перегружена — усили загруженные станции.</li><li><strong>Факт ниже плана:</strong> людей может быть больше, чем нужно — проверь загрузку и состав смены.</li><li>После перестановки снова сравни план и факт.</li></ol></div></section>
         <section class="itph-actions fade-in" aria-label="Действия управляющего сменой"><article><h3>Расстановка по SEEF</h3><p>На самые загруженные станции ставь опытных и быстрых сотрудников.</p></article><article><h3>Усиление</h3><p>Добавляй помощь на станции, где нагрузка выше.</p></article><article><h3>Ротация</h3><p>Переводи сотрудников между станциями с учётом текущей загрузки.</p></article><article><h3>Перерывы</h3><p>Отпускай сотрудников на запланированные перерывы.</p></article><article><h3>Обучение</h3><p>Обучай на рабочем месте, чтобы гибко менять роли сотрудников по расстановке SEEF.</p></article></section>
         <section class="lesson-block seef-materials fade-in"><h2>Материалы по SEEF</h2><p>Если нужно освежить правила расстановки, открой материалы в КингДом.</p><div class="seef-resource-grid"><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rasstanovka_" target="_blank" rel="noopener"><span>SEEF</span><strong>Правила расстановки</strong><small>Открыть в КингДом ↗</small></a><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rukovodstva_seef" target="_blank" rel="noopener"><span>↗</span><strong>Руководства по SEEF</strong><small>Открыть в КингДом ↗</small></a></div></section>
-        <div class="course-note-text itph-course-teaser fade-in"><p><strong>Подробную работу с показателем ты изучал раньше в курсе «Как работать с ITPH на смене».</strong> Вернись к нему, если хочешь вспомнить, как анализировать нагрузку и выбирать действия для смены. Если ты ещё не проходил этот курс, пройди его.</p></div>
+        <div class="course-note-text itph-course-teaser fade-in"><p><strong>Подробная инструкция есть в курсе «Как работать с ITPH на смене».</strong> Используй её, если нужно повторить действия по расстановке.</p></div>
         <div class="chapter-nav"><button class="btn-secondary" type="button" onclick="navigateTo('profit')">← Назад</button><button class="btn-next" type="button" onclick="navigateTo('summary')">Перейти к итогу →</button></div>
       </div>
     </div>
     <div class="page" id="page-summary">
-      <header class="chapter-hero chapter-final"><div class="chapter-hero-inner"><span class="chapter-index">06 / 06</span><h1>Главное<br>по теме</h1><p>Соедини показатели в одну систему</p></div></header>
+      <header class="chapter-hero chapter-final"><div class="chapter-hero-inner"><span class="chapter-index">06 / 06</span><h1>Главное<br>по теме</h1><p>Готовые действия для смены</p></div></header>
       <div class="content-wrap">
         <section class="summary-card fade-in"><span class="eyebrow">Финальная памятка</span><ul class="check-list large"><li>Открой Brave&amp;Bold и сравни показатель с целью.</li><li>Если есть отклонение, проверь связанную зону: Гостей, команду, сборку или выдачу.</li><li>Выполни действие из подсказки и снова посмотри на показатель.</li><li>Выручка и расходы вместе влияют на прибыль ресторана.</li></ul></section>
         <section class="shift-cheatsheet fade-in" aria-labelledby="shift-cheatsheet-title">
