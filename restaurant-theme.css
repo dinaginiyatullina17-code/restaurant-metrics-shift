@@ -886,7 +886,8 @@ input:focus-visible {
 
 .bonus-impact-flow article {
   display: grid;
-  align-content: center;
+  grid-template-rows: 1rem 2.6rem auto;
+  align-content: start;
   gap: var(--ku-space-2xs);
   min-height: 9rem;
   padding: var(--ku-space-s);
@@ -894,6 +895,10 @@ input:focus-visible {
   border: var(--ku-border-w) solid var(--ku-border);
   border-radius: var(--ku-radius-l);
   background: var(--ku-brand-soft);
+}
+
+.sos-target > div:last-child {
+  text-align: left;
 }
 
 .bonus-impact-flow b {
