@@ -12,7 +12,7 @@ const CHAPTER_NAMES = {
   productivity:'Производительность труда', summary:'Главное по теме'
 };
 
-const PROGRESS_KEY = 'restaurant_metrics_2_progress_v6';
+const PROGRESS_KEY = 'restaurant_metrics_2_progress_v7';
 const PAGE_REQUIREMENTS = {
   income: ['income-feedback'],
   revenue: ['average-check-feedback', 'guest-metrics-feedback'],
@@ -29,7 +29,7 @@ const TEST_ANSWERS = {
   'profit-feedback': 'Вычеты идут по порядку: FC, затем LC, затем аренда и прочие затраты.',
   'itph-feedback': 'Если фактический ITPH выше плана и растёт очередь, команда перегружена: усиль загруженную станцию по SEEF.',
   'seef-recall-feedback': 'Опытный сотрудник усиливает сборку, а новичок получает подходящую задачу с учётом его навыков.',
-  'final-feedback': 'Если трафик не изменился, а выручка снизилась — проверь средний чек. Если продажи растут без роста прибыли — проверь затраты. При очереди сопоставь нагрузку с часами команды и скорректируй расстановку. Жалобы могут снижать возвратность Гостей. Списания и перерасход упаковки влияют на Food Cost.'
+  'final-feedback': 'Если трафик не изменился, а выручка снизилась — проверь средний чек. При очереди сопоставь нагрузку с часами команды и скорректируй расстановку. Жалобы могут снижать возвратность Гостей.'
 };
 let currentPage = 'home';
 let unlockedChapters = 1;
@@ -128,7 +128,7 @@ function initFadeIn() {
   });
 }
 
-function collectState() { return {version:6, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
+function collectState() { return {version:7, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
 
 function saveProgress() {
   const json = JSON.stringify(collectState());
@@ -152,11 +152,11 @@ function loadProgress() {
   if (json) {
     try {
       const state = JSON.parse(json);
-      if (state.version === 6 && typeof state.unlocked === 'number') {
+      if (state.version === 7 && typeof state.unlocked === 'number') {
         unlockedChapters = Math.max(1, Math.min(state.unlocked, CHAPTER_ORDER.length));
       }
-      if (state.version === 6 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
-      if (state.version === 6 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
+      if (state.version === 7 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
+      if (state.version === 7 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
   applyHomeLocks();
@@ -471,7 +471,7 @@ function checkFinalLinks() {
   const values = selects.map(select => select.value).filter(Boolean);
   const unique = new Set(values).size === values.length;
   let hint = 'Сопоставь, какой показатель изменился в каждой ситуации, и выбери связанный с ним вывод.';
-  if (!allFilled) hint = 'Выбери вывод или действие для каждой из пяти ситуаций.';
+  if (!allFilled) hint = 'Выбери вывод или действие для каждой ситуации.';
   else if (!unique) hint = 'Каждый вывод используется один раз. Проверь строки, где выбран одинаковый вариант.';
   showFeedback('final-feedback',allCorrect,'Верно! Для каждой ситуации ты выбрал связанный с ней показатель и подходящее действие.',hint);
 }
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const pageUrl = new URL(location.href);
   if (pageUrl.searchParams.get('reset') === '1') {
     try {
-      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6'].forEach(key => {
+      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7'].forEach(key => {
         localStorage.removeItem(key);
         localStorage.removeItem(key + '_completed');
       });

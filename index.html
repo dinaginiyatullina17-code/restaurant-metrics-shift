@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20260928-7">
+  <link rel="stylesheet" href="style.css?v=20260928-8">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -301,9 +301,9 @@
           <div class="exercise-actions"><button class="btn-check" type="button" onclick="checkZoneSort('zone-left','zone-right',['products','packaging'],['writeoffs','meals','shortage'],'cost-feedback')">Проверить</button><button class="btn-secondary" type="button" onclick="resetZonePool('idea-pool','zone-left','zone-right')">Сбросить</button></div><div class="feedback-box" id="cost-feedback" aria-live="polite"></div>
         </section>
 
-        <section class="lesson-block fade-in"><h2>Labor Cost (LC)</h2><p><strong>Что показывает:</strong> сколько ресторан тратит на оплату труда команды.</p><div class="do-this"><span>Что делать на смене</span><ol><li>Сравнить загрузку ресторана и количество сотрудников.</li><li>При низкой загрузке вовремя отпустить сотрудников, при высокой — вызвать усиление.</li><li>Проверить отметки прихода и ухода в Биосмарт.</li></ol></div><p>На LC также влияют комплектность и текучесть.</p></section>
+        <section class="lesson-block fade-in"><h2>Labor Cost (LC)</h2><p><strong>Что показывает:</strong> сколько ресторан тратит на оплату труда команды.</p><div class="do-this"><span>Что делать на смене</span><ol><li>Посмотреть, хватает ли сотрудников для текущей загрузки.</li><li>При низкой загрузке вовремя отпустить сотрудников, при высокой — вызвать усиление.</li><li>Проверить отметки прихода и ухода в Биосмарт.</li></ol></div><p>На LC также влияют комплектность и текучесть.</p></section>
 
-        <section class="people-metrics fade-in" id="people-metrics"><article><div class="ring-metric"><strong>100%</strong><span>цель</span></div><h3>Комплектность</h3><p><strong>Что показывает:</strong> хватает ли ресторану сотрудников для плановой выручки.</p><p><strong>Если ниже цели:</strong> правильно расставь команду, усили загруженную станцию и сообщи директору о нехватке людей.</p></article><article><div class="ring-metric danger"><strong>0%</strong><span>цель</span></div><h3>Текучесть</h3><p><strong>Что показывает:</strong> сколько сотрудников увольняется.</p><p><strong>Что делать:</strong> равномерно распределять нагрузку, давать понятную обратную связь, обучать и поддерживать команду.</p></article></section>
+        <section class="people-metrics fade-in" id="people-metrics"><article><div class="ring-metric"><strong>100%</strong><span>цель</span></div><h3>Комплектность</h3><p><strong>Что показывает:</strong> хватает ли ресторану сотрудников для плановой выручки.</p><p><strong>Если ниже цели:</strong> правильно расставь команду и усили загруженную станцию. Если сотрудников не хватает на сменах постоянно, сообщи директору.</p></article><article><div class="ring-metric danger"><strong>0%</strong><span>цель</span></div><h3>Текучесть</h3><p><strong>Что показывает:</strong> сколько сотрудников увольняется.</p><p><strong>Что делать:</strong> равномерно распределять нагрузку, давать понятную обратную связь, обучать и поддерживать команду.</p></article></section>
 
         <section class="lesson-block fade-in"><h2>Коммунальные услуги и ремонт</h2><p>Ты снижаешь коммунальные расходы, когда следишь, что сотрудники:</p><div class="eco-grid"><div><span>01</span>выключают свет в помещениях, где никого нет;</div><div><span>02</span>закрывают двери кулеров и фризеров;</div><div><span>03</span>бережно относятся к инвентарю и оборудованию;</div><div><span>04</span>включают оборудование только при необходимости.</div></div></section>
         
@@ -322,7 +322,7 @@
         </section>
         <p class="fade-in">Запоминать расчёты не нужно. Запомни, какие действия смены влияют на каждый результат.</p>
         <section class="profit-stack fade-in" aria-label="Три вида прибыли">
-          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p><strong>Просто:</strong> из выручки вычли продукты и упаковку — FC.</p><p class="management-impact"><strong>Твоё действие:</strong> выполняй цель по выручке, контролируй порции, упаковку и списания.</p></div></article>
+          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p><strong>Просто:</strong> из выручки вычли продукты и упаковку — FC.</p><p class="management-impact"><strong>Твоё действие:</strong> выполняй цель по выручке, контролируй приготовление, упаковку и списания.</p></div></article>
           <article><span>02</span><div><h2>Операционная прибыль</h2><p><strong>Просто:</strong> из маржи вычли оплату часов команды — LC.</p><p class="management-impact"><strong>Твоё действие:</strong> сопоставляй количество сотрудников с потоком заказов и проверяй отметки в Биосмарт.</p></div></article>
           <article><span>03</span><div><h2>EBITDA</h2><p><strong>Просто:</strong> из результата вычли остальные расходы ресторана.</p><p class="management-impact"><strong>Твоё действие:</strong> экономно используй ресурсы и следи за оборудованием.</p></div></article>
         </section>
@@ -358,7 +358,7 @@
         </figure>
         <section class="lesson-block seef-materials fade-in"><h2>Перед практикой вспомни SEEF</h2><p>Если нужно освежить правила расстановки, открой материалы в КингДом, а затем переходи к ситуации.</p><div class="seef-resource-grid"><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rasstanovka_" target="_blank" rel="noopener"><span>SEEF</span><strong>Правила расстановки</strong><small>Открыть в КингДом ↗</small></a><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rukovodstva_seef" target="_blank" rel="noopener"><span>↗</span><strong>Руководства по SEEF</strong><small>Открыть в КингДом ↗</small></a></div></section>
         <section class="exercise-card fade-in"><span class="eyebrow">Примени SEEF</span><h2>Как скорректировать расстановку?</h2><p>Во время пика на сборке заказов растёт очередь. Там работает новый сотрудник, а опытный сотрудник на менее загруженной станции завершил основные задачи. Как использовать SEEF?</p><div class="binary-choice" data-choice-group><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Фиксированная расстановка не учитывает изменившуюся загрузку. SEEF помогает вовремя перераспределять команду.')">Сохранить первоначальную расстановку до конца смены, чтобы не нарушать план</button><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Перевод всей команды может создать дефицит на других станциях. Нужно точечно усилить западающую зону с учётом навыков.')">Перевести на сборку всех свободных сотрудников независимо от их навыков</button><button type="button" onclick="answerChoice(this, true, 'seef-recall-feedback', 'Верно! Расстановка должна учитывать текущую загрузку станций и навыки сотрудников: опытный сотрудник усиливает западающую зону, а новичок получает подходящую роль и поддержку.')">Перевести опытного сотрудника на сборку, а новичку дать задачу по навыкам</button></div><div class="feedback-box" id="seef-recall-feedback" aria-live="polite"></div></section>
-        <section class="lesson-block itph-management-intro fade-in"><h2>Как принимать решение по ITPH</h2><div class="do-this"><span>Действуй по ситуации</span><ol><li><strong>Факт выше плана:</strong> понаблюдай за сменой, найди западающую станцию и усиль её опытным сотрудником.</li><li><strong>Факт ниже плана:</strong> проверь динамику. Если отклонение разовое, используй время на перерывы, подготовку к пику и чистоту. Если повторяется, корректируй часы команды.</li><li>После решения проверь очередь, загрузку станции и ITPH. Так ты поймёшь, помогло ли действие.</li></ol></div></section>
+        <section class="lesson-block itph-management-intro fade-in"><h2>Как принимать решение по ITPH</h2><div class="do-this"><span>Действуй по ситуации</span><ol><li><strong>Факт выше плана:</strong> понаблюдай за сменой, найди западающую станцию и усиль её опытным сотрудником.</li><li><strong>Факт ниже плана:</strong> проверь динамику. Если отклонение разовое, используй время на перерывы, подготовку к пику и чистоту. Если повторяется, корректируй часы команды.</li><li>После решения снова оцени ситуацию на смене и сравни ITPH с целью. Если отклонение осталось, определи другую причину и выбери новое действие.</li></ol></div></section>
         <p class="strong-lead fade-in"><strong>Важно:</strong> при работе с ITPH обрати внимание на эти действия.</p>
         <section class="itph-actions fade-in" aria-label="Действия управляющего сменой"><article><h3>Расстановка по SEEF</h3><p>На самые загруженные станции ставь опытных и быстрых сотрудников.</p></article><article><h3>Усиление</h3><p>Добавляй помощь на станции, где нагрузка выше.</p></article><article><h3>Ротация</h3><p>Переводи сотрудников между станциями с учётом текущей загрузки.</p></article><article><h3>Перерывы</h3><p>Отпускай сотрудников на запланированные перерывы.</p></article><article><h3>Обучение</h3><p>Обучай на рабочем месте, чтобы гибко менять роли сотрудников по расстановке SEEF.</p></article></section>
         <div class="course-note-text itph-course-teaser fade-in"><p><strong>Подробная инструкция есть в курсе «Как работать с ITPH на смене».</strong> Используй её, если нужно повторить пройденный материал.</p></div>
@@ -383,10 +383,8 @@
           <h3>Влияешь действиями на смене</h3>
           <div class="shift-cheatsheet-grid deferred-metrics">
             <article><b>Food Cost</b><p>Контролируй списания, упаковку, учёт и правильное использование продуктов.</p></article>
-            <article><b>Labor Cost</b><p>Учитывай поток заказов при расстановке и проверяй отметки команды в Биосмарт.</p></article>
+            <article><b>Labor Cost</b><p>Сверяй ITPH с целью, корректируй расстановку и проверяй отметки команды в Биосмарт. Комплектность и текучесть помогают понять, хватает ли ресторану сотрудников и удаётся ли сохранять команду.</p></article>
             <article><b>Коммунальные расходы</b><p>Следи, чтобы свет, вода и оборудование использовались только по необходимости.</p></article>
-            <article><b>Комплектность</b><p>Если на сменах постоянно не хватает сотрудников, сообщи директору. На текущей смене расставь имеющуюся команду по приоритетам.</p></article>
-            <article><b>Текучесть</b><p>Равномерно распределяй нагрузку, обучай сотрудников и давай понятную обратную связь.</p></article>
             <article><b>Прибыль</b><p>Выполняй цель по выручке и контролируй действия смены, которые формируют затраты ресторана.</p></article>
           </div>
         </section>
@@ -407,27 +405,17 @@
             <article class="final-match-row">
               <div class="final-match-situation"><span>01 · Ситуация</span><strong>Трафик не изменился, а выручка снизилась.</strong></div>
               <span class="final-match-arrow" aria-hidden="true">→</span>
-              <label><span>Вывод или действие</span><select data-answer="average-check"><option value="">Выбери вариант</option><option value="food-cost">Проверь причины перерасхода продуктов, упаковки и списаний.</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="profit">Проверь затраты: рост продаж сам по себе не гарантирует рост прибыли.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
+              <label><span>Вывод или действие</span><select data-answer="average-check"><option value="">Выбери вариант</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
             </article>
             <article class="final-match-row">
-              <div class="final-match-situation"><span>02 · Результат периода</span><strong>В отчёте видно: продажи выросли, но прибыль не увеличилась.</strong></div>
+              <div class="final-match-situation"><span>02 · Ситуация</span><strong>На сборке растёт очередь, команда не успевает.</strong></div>
               <span class="final-match-arrow" aria-hidden="true">→</span>
-              <label><span>Вывод или действие</span><select data-answer="profit"><option value="">Выбери вариант</option><option value="food-cost">Проверь причины перерасхода продуктов, упаковки и списаний.</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="profit">Проверь затраты: рост продаж сам по себе не гарантирует рост прибыли.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
+              <label><span>Вывод или действие</span><select data-answer="team"><option value="">Выбери вариант</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
             </article>
             <article class="final-match-row">
-              <div class="final-match-situation"><span>03 · Ситуация</span><strong>На сборке растёт очередь, команда не успевает.</strong></div>
+              <div class="final-match-situation"><span>03 · Ситуация</span><strong>Гости жалуются на обслуживание и реже возвращаются.</strong></div>
               <span class="final-match-arrow" aria-hidden="true">→</span>
-              <label><span>Вывод или действие</span><select data-answer="team"><option value="">Выбери вариант</option><option value="food-cost">Проверь причины перерасхода продуктов, упаковки и списаний.</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="profit">Проверь затраты: рост продаж сам по себе не гарантирует рост прибыли.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
-            </article>
-            <article class="final-match-row">
-              <div class="final-match-situation"><span>04 · Ситуация</span><strong>Гости жалуются на обслуживание и реже возвращаются.</strong></div>
-              <span class="final-match-arrow" aria-hidden="true">→</span>
-              <label><span>Вывод или действие</span><select data-answer="guest"><option value="">Выбери вариант</option><option value="food-cost">Проверь причины перерасхода продуктов, упаковки и списаний.</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="profit">Проверь затраты: рост продаж сам по себе не гарантирует рост прибыли.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
-            </article>
-            <article class="final-match-row">
-              <div class="final-match-situation"><span>05 · Результат периода</span><strong>В отчёте виден рост списаний и расхода упаковки.</strong></div>
-              <span class="final-match-arrow" aria-hidden="true">→</span>
-              <label><span>Вывод или действие</span><select data-answer="food-cost"><option value="">Выбери вариант</option><option value="food-cost">Проверь причины перерасхода продуктов, упаковки и списаний.</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="profit">Проверь затраты: рост продаж сам по себе не гарантирует рост прибыли.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
+              <label><span>Вывод или действие</span><select data-answer="guest"><option value="">Выбери вариант</option><option value="average-check">Сначала проверь средний чек: наполненность и стоимость блюд в заказе.</option><option value="guest">Разбери причины жалоб: Гостевой опыт влияет на желание Гостей вернуться.</option><option value="team">Сопоставь нагрузку с часами команды и скорректируй расстановку.</option></select></label>
             </article>
           </div>
           <button class="btn-check" type="button" onclick="checkFinalLinks()">Проверить связи</button>
@@ -444,6 +432,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20260928-5"></script>
+  <script src="script.js?v=20260928-8"></script>
 </body>
 </html>
