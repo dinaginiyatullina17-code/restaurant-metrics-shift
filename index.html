@@ -35,7 +35,7 @@
         <div class="hero-content">
           <span class="eyebrow light">Для Шифт смены</span>
           <h1>Показатели<br>ресторана</h1>
-          <p>Пойми, где на смене<br>нужна твоя помощь</p>
+          <p>От показателя —<br>к решению на смене</p>
         </div>
       </section>
 
@@ -49,7 +49,7 @@
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
           <div class="section-heading"><h2 id="shift-architecture-title">Кто на что влияет</h2><p>Нажми на сотрудника на картинке — появится его карточка.</p></div>
           <figure class="restaurant-scene interactive-scene">
-            <img src="assets/restaurant-shift-map-v7.png" alt="Смена в ресторане: сотрудник зала, кассир с двумя кофемашинами без стаканчиков, сотрудник кухни в синих перчатках, сотрудники сборки и выдачи без перчаток, единая стойка с подносами и управляющий сменой" loading="eager">
+            <img src="assets/restaurant-shift-map-v8.png" alt="Смена в ресторане: сотрудник зала, кассир у кассы перед двумя кофемашинами без стаканчиков, сотрудник кухни в синих перчатках, сотрудники сборки и выдачи без перчаток, единая стойка с подносами и управляющий сменой" loading="eager">
             <button class="employee-hotspot hall" type="button" data-zone="hall" aria-label="Сотрудник в зале"><span>1</span></button>
             <button class="employee-hotspot cash" type="button" data-zone="cash" aria-label="Кассир"><span>2</span></button>
             <button class="employee-hotspot kitchen" type="button" data-zone="kitchen" aria-label="Сотрудник кухни"><span>3</span></button>
@@ -63,9 +63,9 @@
             <div class="team-overview-heading"><span id="team-overview-title">Также в зоне ответственности Шифта</span></div>
             <div class="responsibility-group direct-control">
               <div class="team-overview-grid three-items">
-                <article><b>ITPH</b><p>Сопоставляет количество сотрудников с потоком заказов и меняет расстановку.</p></article>
-                <article><b>Food Cost</b><p>Следит за порциями, списаниями, упаковкой и правильным использованием продуктов.</p></article>
-                <article><b>Коммунальные расходы</b><p>Следит, чтобы оборудование, свет и вода использовались только по необходимости.</p></article>
+                <article><b>ITPH</b><p>Сверяет показатель с целью, смотрит на смену и при необходимости меняет расстановку.</p></article>
+                <article><b>Food Cost</b><p>Следит за списаниями, упаковкой и правильным использованием продуктов.</p></article>
+                <article><b>Коммунальные расходы</b><p>Следит за использованием оборудования, света и воды.</p></article>
               </div>
             </div>
             <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь дальше.</p>
@@ -132,7 +132,7 @@
           </div>
         </details>
 
-        <section class="lesson-block fade-in"><h2>Что нужно делать Шифту</h2><p class="strong-lead">Открой Brave&amp;Bold и сравни фактическую выручку с целью.</p><div class="do-this"><span>Если выручка ниже цели</span><ol><li>Проверь: стало меньше заказов или снизилась сумма заказа.</li><li>Если меньше заказов — смотри трафик.</li><li>Если сумма ниже — смотри средний чек.</li></ol></div></section>
+        <section class="lesson-block fade-in"><h2>Что нужно делать Шифту</h2><p class="strong-lead">Открой Brave&amp;Bold и сравни фактическую выручку с целью.</p><div class="do-this"><span>Если выручка ниже цели</span><ol><li>Посмотри продажи по часам и определи, когда началось отставание.</li><li>Зафиксируй отклонение. В следующем модуле разберём, какие показатели помогут найти его причину.</li></ol></div></section>
 
         <figure class="report-figure fade-in">
           <figcaption>Выполнение финансового плана в Brave&amp;Bold</figcaption>
@@ -143,7 +143,7 @@
           <span class="action-icon" aria-hidden="true">?</span>
           <p><strong>К 18:00 ресторан отстаёт от цели по выручке. До конца дня ещё четыре часа.</strong> Какое решение управляющего будет наиболее обоснованным?</p>
           <div class="binary-choice" data-choice-group>
-            <button type="button" onclick="answerChoice(this, true, 'income-feedback', 'Верно! Действуй по порядку: сравни с целью, проверь трафик и средний чек, затем дай команде конкретную задачу.')">Сравнить продажи с целью, проверить трафик и средний чек, затем дать команде конкретную задачу</button>
+            <button type="button" onclick="answerChoice(this, true, 'income-feedback', 'Верно! Сначала определи, когда началось отставание. Затем разбери связанные показатели и выбери действие по найденной причине.')">Посмотреть продажи по часам, определить, когда началось отставание, и перейти к разбору причины</button>
             <button type="button" onclick="answerChoice(this, false, 'income-feedback', '', 'Само ожидание не изменит результат. Пока смена продолжается, важно определить причину отклонения и выбрать конкретное действие.')">Дождаться закрытия дня: выводы можно делать только после завершения смены</button>
             <button type="button" onclick="answerChoice(this, false, 'income-feedback', '', 'Цель менять нельзя. Проверь трафик и средний чек, затем дай команде конкретную задачу.')">Скорректировать цель до текущего прогноза, чтобы убрать отклонение</button>
           </div>
@@ -184,14 +184,14 @@
             <summary><span>02</span> Трафик</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько Гостей сделали заказ. Смотри в Brave&amp;Bold.</p>
-              <div class="do-this"><span>Если снижается</span><ol><li>Проверь SOS и Гостевой опыт.</li><li>Проверь качество блюд, общение с Гостями и чистоту.</li><li>Устрани найденное отклонение вместе с командой.</li></ol></div>
+              <div class="do-this"><span>Если снижается</span><ol><li>Посмотри динамику по часам: когда стало меньше заказов и как долго это продолжается.</li><li>Проверь SOS и Гостевой опыт.</li><li>Проверь качество блюд, общение с Гостями и чистоту.</li><li>Устрани найденное отклонение вместе с командой.</li></ol></div>
             </div>
           </details>
           <details class="metric-detail">
             <summary><span>03</span> Средний чек</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько в среднем стоит один заказ. Смотри в Brave&amp;Bold.</p>
-              <div class="do-this"><span>Если снижается</span><ol><li>Проверь количество блюд в чеке.</li><li>Проверь, какие блюда продаёт команда.</li><li>Дай фокус продаж и используй подсказку на опережение, активные продажи и треугольник продаж.</li></ol></div>
+              <div class="do-this"><span>Если снижается</span><ol><li>Посмотри динамику по часам: когда снизился средний чек и как долго это продолжается.</li><li>Проверь количество блюд в чеке.</li><li>Проверь, какие блюда продаёт команда.</li><li>Дай фокус продаж и используй подсказку на опережение, активные продажи и треугольник продаж.</li></ol></div>
             </div>
           </details>
         </section>
