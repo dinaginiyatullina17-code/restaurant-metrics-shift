@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20260928-9">
+  <link rel="stylesheet" href="style.css?v=20260928-10">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -185,21 +185,21 @@
         <section class="metric-explorer fade-in" aria-labelledby="metric-explorer-title">
           <div class="section-heading"><p>Если выручка отстаёт от цели, по трафику и среднему чеку можно понять, где искать причину. Открой нужную карточку и пройди проверки по порядку.</p><h2 id="metric-explorer-title">Показатель → что проверить → что сделать</h2></div>
           <details class="metric-detail" open>
-            <summary><span>01</span> Выручка</summary>
+            <summary><span class="metric-symbol" aria-hidden="true">₽</span> Выручка</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько денег принесли все оплаченные заказы. Наличные, карты, баллы «Спасибо» и короны уже учтены.</p>
               <div class="do-this"><span>Если ниже цели</span><ol><li>Открой Brave&amp;Bold и проверь трафик.</li><li>Проверь средний чек.</li><li>Работай с тем показателем, который снизился.</li></ol></div>
             </div>
           </details>
           <details class="metric-detail">
-            <summary><span>02</span> Трафик</summary>
+            <summary><span class="metric-symbol" aria-hidden="true">↗</span> Трафик</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько Гостей сделали заказ. Смотри в Brave&amp;Bold.</p>
               <div class="do-this"><span>Если снижается</span><ol><li>Посмотри динамику по часам: когда стало меньше заказов и как долго это продолжается.</li><li>Посмотри, что могло помешать Гостю прийти и сделать заказ: виден ли ресторан, горит ли свет и вывеска, открыт ли вход, работают ли касса и киоски.</li><li>Уточни, не изменилась ли ситуация рядом с рестораном: открылись ли конкуренты, работает ли реклама и действуют ли промо.</li><li>Передай директору то, что нельзя исправить во время смены. То, что зависит от команды, исправь сразу.</li></ol></div>
             </div>
           </details>
           <details class="metric-detail">
-            <summary><span>03</span> Средний чек</summary>
+            <summary><span class="metric-symbol" aria-hidden="true">▤</span> Средний чек</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько в среднем стоит один заказ. Смотри в Brave&amp;Bold.</p>
               <div class="do-this"><span>Если снижается</span><ol><li>Посмотри динамику по часам: когда снизился средний чек и как долго это продолжается.</li><li>Проверь количество блюд в чеке.</li><li>Проверь, какие блюда продаёт команда.</li><li>Дай фокус продаж и используй подсказку на опережение, активные продажи и треугольник продаж.</li></ol></div>
@@ -258,6 +258,11 @@
           <span>Следующий показатель</span>
           <h2>Скорость обслуживания — SOS</h2>
           <p>Скорость — часть Гостевого опыта, но у неё есть отдельный показатель. SOS считается с момента, когда Гость получил чек, до выдачи последней позиции заказа. Отслеживай его в Brave&amp;Bold.</p>
+        </section>
+
+        <section class="station-scene fade-in" aria-label="Путь заказа по станциям ресторана">
+          <div class="station-scene-copy"><span>Мини-сцена</span><h2>Где заказ замедлился?</h2><p>Сигнал SOS показывает задержку. Шифт смотрит на путь заказа и находит западающую станцию.</p></div>
+          <div class="station-path"><div><i>1</i><b>Касса</b></div><em>→</em><div class="alert"><i>2</i><b>Кухня</b><small>SOS ↑</small></div><em>→</em><div><i>3</i><b>Сборка</b></div><em>→</em><div><i>4</i><b>Выдача</b></div></div>
         </section>
 
         <section class="sos-target fade-in"><div><span>Цель SOS</span><strong>3:10</strong><small>3 минуты 10 секунд</small></div><div><p><strong>Если SOS выше цели:</strong></p><ol><li>Найди западающую станцию.</li><li>Устрани проблему, которая мешает выполнять скорость обслуживания на этой станции.</li><li>Снова проверь SOS.</li></ol></div></section>
@@ -356,6 +361,9 @@
           <figcaption>Плановый и фактический ITPH по часам</figcaption>
           <div class="report-image-scroll" tabindex="0" aria-label="Таблицу можно прокручивать по горизонтали"><img class="report-image report-image-wide" src="assets/brave-itph-hours.png?v=20260928-3" alt="Строка ITPH с плановыми и фактическими значениями по часам в Brave&amp;Bold" loading="lazy"></div>
         </figure>
+        <section class="load-scene fade-in" aria-label="Как сопоставить поток заказов и команду">
+          <div><span>Поток заказов</span><strong>● ● ● ● ● ● ●</strong><small>заказов много</small></div><i>↔</i><div><span>Команда</span><strong>● ● ●</strong><small>сотрудников мало</small></div><p><b>Сигнал:</b> ITPH выше цели. Найди станцию, которой нужна помощь.</p>
+        </section>
         <section class="lesson-block seef-materials fade-in"><h2>Перед практикой вспомни SEEF</h2><p>Если нужно освежить правила расстановки, открой материалы в КингДом, а затем переходи к ситуации.</p><div class="seef-resource-grid"><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rasstanovka_" target="_blank" rel="noopener"><span>SEEF</span><strong>Правила расстановки</strong><small>Открыть в КингДом ↗</small></a><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rukovodstva_seef" target="_blank" rel="noopener"><span>↗</span><strong>Руководства по SEEF</strong><small>Открыть в КингДом ↗</small></a></div></section>
         <section class="exercise-card fade-in"><span class="eyebrow">Примени SEEF</span><h2>Как скорректировать расстановку?</h2><p>Во время пика на сборке заказов растёт очередь. Там работает новый сотрудник, а опытный сотрудник на менее загруженной станции завершил основные задачи. Как использовать SEEF?</p><div class="binary-choice" data-choice-group><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Фиксированная расстановка не учитывает изменившуюся загрузку. SEEF помогает вовремя перераспределять команду.')">Сохранить первоначальную расстановку до конца смены, чтобы не нарушать план</button><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Перевод всей команды может создать дефицит на других станциях. Нужно точечно усилить западающую зону с учётом навыков.')">Перевести на сборку всех свободных сотрудников независимо от их навыков</button><button type="button" onclick="answerChoice(this, true, 'seef-recall-feedback', 'Верно! Расстановка должна учитывать текущую загрузку станций и навыки сотрудников: опытный сотрудник усиливает западающую зону, а новичок получает подходящую роль и поддержку.')">Перевести опытного сотрудника на сборку, а новичку дать задачу по навыкам</button></div><div class="feedback-box" id="seef-recall-feedback" aria-live="polite"></div></section>
         <section class="lesson-block itph-management-intro fade-in"><h2>Как принимать решение по ITPH</h2><div class="do-this"><span>Действуй по ситуации</span><ol><li><strong>Факт выше плана:</strong> понаблюдай за сменой, найди западающую станцию и усиль её опытным сотрудником.</li><li><strong>Факт ниже плана:</strong> проверь динамику. Если отклонение разовое, используй время на перерывы, подготовку к пику и чистоту. Если повторяется, корректируй часы команды.</li><li>После решения снова оцени ситуацию на смене и сравни ITPH с целью. Если отклонение осталось, определи другую причину и выбери новое действие.</li></ol></div></section>
@@ -369,23 +377,23 @@
       <header class="chapter-hero chapter-final"><div class="chapter-hero-inner"><span class="chapter-index">06 / 06</span><h1>Главное<br>по теме</h1><p>Готовые действия для смены</p></div></header>
       <div class="content-wrap">
         <section class="shift-cheatsheet fade-in" aria-labelledby="shift-cheatsheet-title">
-          <div class="section-heading"><span class="eyebrow">Шпаргалка Шифта</span><h2 id="shift-cheatsheet-title">Что делать с показателями на смене</h2><p>Часть показателей ты видишь в течение смены. По остальным итоговый результат позже появится в отчётах у директора, но на него влияют твои действия сегодня.</p></div>
-          <h3>Видишь во время смены</h3>
-          <div class="shift-cheatsheet-grid">
-            <article><b>Выручка ↓</b><p>Проверь трафик и средний чек. Работай с тем, который снизился.</p></article>
-            <article><b>Трафик ↓</b><p>Проверь, что изменилось вокруг ресторана и что мешает Гостю прийти или сделать заказ.</p></article>
-            <article><b>Средний чек ↓</b><p>Проверь наполненность чека и дай команде конкретный фокус продаж.</p></article>
-            <article><b>Гостевой опыт ↓</b><p>Открой Eyeflow, найди слабый фактор и исправь его на смене.</p></article>
-            <article><b>SOS выше 3:10</b><p>Найди западающую станцию, устрани причину задержки и снова проверь SOS.</p></article>
-            <article><b>ITPH выше плана</b><p>Команда перегружена: усили загруженные станции по SEEF.</p></article>
-            <article><b>ITPH ниже плана</b><p>Проверь динамику и реши, как использовать свободное время или скорректировать часы команды.</p></article>
-          </div>
-          <h3>Влияешь действиями на смене</h3>
-          <div class="shift-cheatsheet-grid deferred-metrics">
-            <article><b>Food Cost</b><p>Контролируй списания, упаковку, учёт и правильное использование продуктов.</p></article>
-            <article><b>Labor Cost</b><p>Сверяй ITPH с целью и проверяй отметки команды в Биосмарт.</p></article>
-            <article><b>Коммунальные расходы</b><p>Следи, чтобы свет, вода и оборудование использовались только по необходимости.</p></article>
-            <article><b>Прибыль</b><p>Выполняй цель по выручке и контролируй действия смены, которые формируют затраты ресторана.</p></article>
+          <div class="section-heading"><span class="eyebrow">Рабочий стол Шифта</span><h2 id="shift-cheatsheet-title">Что делать с показателями на смене</h2><p>Слева — показатели, которые можно увидеть во время смены. Справа — результаты, на которые влияют действия команды сегодня.</p></div>
+          <div class="shift-dashboard">
+            <section class="dashboard-group live"><h3><span aria-hidden="true">◉</span> Вижу во время смены</h3><div class="dashboard-list">
+              <article><i aria-hidden="true">₽</i><div><b>Выручка ↓</b><p>Проверь трафик и средний чек.</p></div></article>
+              <article><i aria-hidden="true">↗</i><div><b>Трафик ↓</b><p>Проверь, что мешает Гостю прийти или сделать заказ.</p></div></article>
+              <article><i aria-hidden="true">▤</i><div><b>Средний чек ↓</b><p>Проверь состав заказов и дай фокус продаж.</p></div></article>
+              <article><i aria-hidden="true">★</i><div><b>Гостевой опыт ↓</b><p>Найди слабый фактор и исправь его.</p></div></article>
+              <article><i aria-hidden="true">◷</i><div><b>SOS выше цели</b><p>Найди западающую станцию и устрани причину.</p></div></article>
+              <article><i aria-hidden="true">↕</i><div><b>ITPH не в цели</b><p>Оцени нагрузку и скорректируй работу команды.</p></div></article>
+            </div></section>
+            <div class="dashboard-manager" aria-label="Управляющий сменой"><div class="manager-avatar" aria-hidden="true"><span></span></div><b>Управляющий сменой</b><small>видит → решает → направляет</small></div>
+            <section class="dashboard-group influence"><h3><span aria-hidden="true">◆</span> Влияю действиями</h3><div class="dashboard-list">
+              <article><i aria-hidden="true">▣</i><div><b>Food Cost</b><p>Контролируй приготовление, списания и упаковку.</p></div></article>
+              <article><i aria-hidden="true">●</i><div><b>Labor Cost</b><p>Сверяй ITPH с целью и проверяй Биосмарт.</p></div></article>
+              <article><i aria-hidden="true">⌁</i><div><b>Коммунальные расходы</b><p>Следи за использованием света, воды и оборудования.</p></div></article>
+              <article><i aria-hidden="true">₽</i><div><b>Прибыль</b><p>Выполняй цель по выручке и контролируй затраты смены.</p></div></article>
+            </div></section>
           </div>
         </section>
         <section class="final-chain fade-in" aria-labelledby="final-chain-title">
