@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20260928-10">
+  <link rel="stylesheet" href="style.css?v=20260928-11">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -261,7 +261,7 @@
         </section>
 
         <section class="station-scene fade-in" aria-label="Путь заказа по станциям ресторана">
-          <div class="station-scene-copy"><span>Мини-сцена</span><h2>Где заказ замедлился?</h2><p>Сигнал SOS показывает задержку. Шифт смотрит на путь заказа и находит западающую станцию.</p></div>
+          <div class="station-scene-copy"><h2>Где заказ замедлился?</h2><p>Сигнал SOS показывает задержку. Шифт смотрит на путь заказа и находит западающую станцию.</p></div>
           <div class="station-path"><div><i>1</i><b>Касса</b></div><em>→</em><div class="alert"><i>2</i><b>Кухня</b><small>SOS ↑</small></div><em>→</em><div><i>3</i><b>Сборка</b></div><em>→</em><div><i>4</i><b>Выдача</b></div></div>
         </section>
 
@@ -361,8 +361,13 @@
           <figcaption>Плановый и фактический ITPH по часам</figcaption>
           <div class="report-image-scroll" tabindex="0" aria-label="Таблицу можно прокручивать по горизонтали"><img class="report-image report-image-wide" src="assets/brave-itph-hours.png?v=20260928-3" alt="Строка ITPH с плановыми и фактическими значениями по часам в Brave&amp;Bold" loading="lazy"></div>
         </figure>
-        <section class="load-scene fade-in" aria-label="Как сопоставить поток заказов и команду">
-          <div><span>Поток заказов</span><strong>● ● ● ● ● ● ●</strong><small>заказов много</small></div><i>↔</i><div><span>Команда</span><strong>● ● ●</strong><small>сотрудников мало</small></div><p><b>Сигнал:</b> ITPH выше цели. Найди станцию, которой нужна помощь.</p>
+        <section class="load-scene fade-in" aria-label="Что делать, если ITPH выше цели">
+          <h2>Если ITPH выше цели</h2>
+          <div class="load-step"><i>1</i><div><b>Посмотри на работу смены</b><p>Определи, где команда не успевает выполнять заказы.</p></div></div>
+          <span class="load-arrow" aria-hidden="true">→</span>
+          <div class="load-step"><i>2</i><div><b>Найди западающую станцию</b><p>Проверь, что мешает ей работать с текущей нагрузкой.</p></div></div>
+          <span class="load-arrow" aria-hidden="true">→</span>
+          <div class="load-step action"><i>3</i><div><b>Прими решение</b><p>Направь на станцию сотрудника, который может помочь.</p></div></div>
         </section>
         <section class="lesson-block seef-materials fade-in"><h2>Перед практикой вспомни SEEF</h2><p>Если нужно освежить правила расстановки, открой материалы в КингДом, а затем переходи к ситуации.</p><div class="seef-resource-grid"><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rasstanovka_" target="_blank" rel="noopener"><span>SEEF</span><strong>Правила расстановки</strong><small>Открыть в КингДом ↗</small></a><a class="seef-resource-card" href="https://burgerking.daoffice.ru/net_home/Pages/rukovodstva_seef" target="_blank" rel="noopener"><span>↗</span><strong>Руководства по SEEF</strong><small>Открыть в КингДом ↗</small></a></div></section>
         <section class="exercise-card fade-in"><span class="eyebrow">Примени SEEF</span><h2>Как скорректировать расстановку?</h2><p>Во время пика на сборке заказов растёт очередь. Там работает новый сотрудник, а опытный сотрудник на менее загруженной станции завершил основные задачи. Как использовать SEEF?</p><div class="binary-choice" data-choice-group><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Фиксированная расстановка не учитывает изменившуюся загрузку. SEEF помогает вовремя перераспределять команду.')">Сохранить первоначальную расстановку до конца смены, чтобы не нарушать план</button><button type="button" onclick="answerChoice(this, false, 'seef-recall-feedback', '', 'Перевод всей команды может создать дефицит на других станциях. Нужно точечно усилить западающую зону с учётом навыков.')">Перевести на сборку всех свободных сотрудников независимо от их навыков</button><button type="button" onclick="answerChoice(this, true, 'seef-recall-feedback', 'Верно! Расстановка должна учитывать текущую загрузку станций и навыки сотрудников: опытный сотрудник усиливает западающую зону, а новичок получает подходящую роль и поддержку.')">Перевести опытного сотрудника на сборку, а новичку дать задачу по навыкам</button></div><div class="feedback-box" id="seef-recall-feedback" aria-live="polite"></div></section>
@@ -387,7 +392,7 @@
               <article><i aria-hidden="true">◷</i><div><b>SOS выше цели</b><p>Найди западающую станцию и устрани причину.</p></div></article>
               <article><i aria-hidden="true">↕</i><div><b>ITPH не в цели</b><p>Оцени нагрузку и скорректируй работу команды.</p></div></article>
             </div></section>
-            <div class="dashboard-manager" aria-label="Управляющий сменой"><div class="manager-avatar" aria-hidden="true"><span></span></div><b>Управляющий сменой</b><small>видит → решает → направляет</small></div>
+            <div class="dashboard-manager" aria-label="Управляющий сменой"><img class="manager-avatar" src="assets/shift-manager-v8.png?v=20260928-1" alt="Управляющий сменой в чёрной форме"><b>Управляющий сменой</b><small>видит → решает → направляет</small></div>
             <section class="dashboard-group influence"><h3><span aria-hidden="true">◆</span> Влияю действиями</h3><div class="dashboard-list">
               <article><i aria-hidden="true">▣</i><div><b>Food Cost</b><p>Контролируй приготовление, списания и упаковку.</p></div></article>
               <article><i aria-hidden="true">●</i><div><b>Labor Cost</b><p>Сверяй ITPH с целью и проверяй Биосмарт.</p></div></article>
