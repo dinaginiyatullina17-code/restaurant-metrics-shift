@@ -7,8 +7,8 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260828-10">
-  <link rel="stylesheet" href="style.css?v=20260918-1">
-  <link rel="stylesheet" href="restaurant-theme.css?v=20260828-10">
+  <link rel="stylesheet" href="style.css?v=20260928-2">
+  <link rel="stylesheet" href="restaurant-theme.css?v=20260928-2">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
     #top-nav.home-hidden { display: none !important; }
@@ -151,8 +151,8 @@
         </section>
 
         <section class="lesson-block fade-in">
-          <p class="strong-lead">Brave&amp;Bold показывает результат, а PLS помогает подготовиться к потоку заказов.</p>
-          <p>PLS прогнозирует продажи и подсказывает количество заготовок. Следи за фактом: если поток изменился, проверь подсказку системы и скорректируй работу.</p>
+          <p class="strong-lead">Ты уже знаком с PLS. После проверки выручки в Brave&amp;Bold используй PLS, чтобы подготовиться к ожидаемому потоку заказов.</p>
+          <p>PLS прогнозирует продажи и подсказывает количество заготовок. Если фактический поток отличается от прогноза, проверь подсказку системы и скорректируй работу.</p>
           <div class="course-note-text"><p><strong>Дальше по треку тебя ждёт отдельный курс «Система PLS».</strong> В нём ты подробнее разберёшь, как работать с прогнозом продаж, автокорректировкой и ручными изменениями.</p></div>
           <p>Дальше разберём две причины изменения выручки: трафик и средний чек.</p>
         </section>
@@ -169,7 +169,12 @@
           <div class="equation-main"><span>Выручка</span><small>= товарооборот</small></div><span class="equation-sign">=</span><div class="equation-part"><strong>Трафик</strong><small>количество Гостей</small></div><span class="equation-sign">×</span><div class="equation-part"><strong>Средний чек</strong><small>стоимость заказа</small></div>
         </section>
         <p class="lead fade-in"><strong>Ресторан зарабатывает — это выручка.</strong> Она складывается из трафика и среднего чека.</p>
-        <aside class="impact-card fade-in"><span>Простой пример</span><strong>Два Гостя сделали по заказу на 500 ₽.</strong><p>Ресторан получил 1 000 ₽ выручки: 2 заказа × 500 ₽.</p></aside>
+        <section class="revenue-example fade-in" aria-label="Простой пример расчёта выручки">
+          <span>Простой пример</span><h2>В ресторан пришли два Гостя</h2>
+          <div class="revenue-example-orders"><article><small>Заказ первого Гостя</small><strong>500 ₽</strong></article><i>+</i><article><small>Заказ второго Гостя</small><strong>500 ₽</strong></article></div>
+          <div class="revenue-example-result"><p><b>Трафик</b><strong>2 заказа</strong></p><p><b>Средний чек</b><strong>500 ₽</strong></p><p><b>Выручка</b><strong>1 000 ₽</strong></p></div>
+          <p class="revenue-example-note">Складываем оплаты двух заказов: 500 ₽ + 500 ₽ = 1 000 ₽ выручки.</p>
+        </section>
         <p class="fade-in">Оба показателя смотри в Brave&amp;Bold: трафик показывает количество заказов, а средний чек — среднюю стоимость одного заказа.</p>
 
         <figure class="report-figure fade-in">
@@ -271,7 +276,7 @@
           </div>
           <div class="feedback-box" id="guest-metrics-feedback" aria-live="polite"></div>
         </section>
-        <section class="summary-card fade-in"><span class="eyebrow">Коротко о главном</span><h2>Про управление выручкой</h2><ul class="check-list"><li>Показатели помогают тебе понять, над чем нужно поработать, чтобы достичь целей по выручке.</li><li>Чтобы отслеживать цель по выручке, используй Brave&amp;Bold, а данные по получасовым продажам смотри в PLS.</li><li>Выручка складывается из количества заказов и их стоимости, поэтому ты отвечаешь за цели по трафику и среднему чеку.</li><li>Трафик растёт не только за счёт новых Гостей: хороший Гостевой опыт помогает постоянным Гостям возвращаться.</li></ul></section>
+        <section class="summary-card fade-in"><span class="eyebrow">Коротко о главном</span><h2>Про управление выручкой</h2><ul class="check-list"><li>Показатели помогают тебе понять, над чем нужно поработать, чтобы достичь целей по выручке.</li><li>Выручка складывается из количества заказов и их стоимости, поэтому ты отвечаешь за цели по трафику и среднему чеку.</li><li>Трафик растёт не только за счёт новых Гостей: хороший Гостевой опыт помогает постоянным Гостям возвращаться.</li></ul></section>
         <div class="chapter-nav"><button class="btn-secondary" type="button" onclick="navigateTo('income')">← Назад</button><button class="btn-next" type="button" onclick="navigateTo('costs')">Следующая глава →</button></div>
       </div>
     </div>
@@ -281,7 +286,9 @@
       <div class="content-wrap">
         <section class="definition-card fade-in"><span>Ресторан тратит — это затраты</span><p>Затраты — это средства, которые потратили на продукцию и её производство, аренду, коммунальные услуги и зарплату сотрудникам.</p></section>
         <section class="lesson-block fade-in">
-          <h2>Познакомься с четырьмя группами затрат</h2><p>Ресторан тратит деньги на продукты и упаковку, часы работы команды, коммунальные услуги и ремонт:</p>
+          <h2>Познакомься с четырьмя группами затрат</h2>
+          <aside class="cost-home-example"><strong>Представь обычный дом.</strong><p>Семья покупает продукты, платит за свет и воду, иногда ремонтирует технику. В ресторане похожая логика: чтобы он работал, нужны продукты, сотрудники, коммунальные услуги и исправное оборудование.</p></aside>
+          <p>Затраты ресторана делятся на четыре группы:</p>
           <ul class="cost-list"><li><strong>FC</strong><span>затраты на производство продукции (Food Cost, или FC);</span></li><li><strong>LC</strong><span>затраты на оплату труда сотрудников (Labor Cost, или LC);</span></li><li><strong>₽</strong><span>коммунальные расходы;</span></li><li><strong>↗</strong><span>расходы на различный ремонт (Прочие затраты).</span></li></ul>
         </section>
 
@@ -362,7 +369,7 @@
       <header class="chapter-hero chapter-final"><div class="chapter-hero-inner"><span class="chapter-index">06 / 06</span><h1>Главное<br>по теме</h1><p>Готовые действия для смены</p></div></header>
       <div class="content-wrap">
         <section class="shift-cheatsheet fade-in" aria-labelledby="shift-cheatsheet-title">
-          <div class="section-heading"><span class="eyebrow">Шпаргалка Шифта</span><h2 id="shift-cheatsheet-title">Что делать с показателями на смене</h2><p>Часть показателей ты видишь в течение смены. По остальным результат появится позже, но на него влияют твои действия сегодня.</p></div>
+          <div class="section-heading"><span class="eyebrow">Шпаргалка Шифта</span><h2 id="shift-cheatsheet-title">Что делать с показателями на смене</h2><p>Часть показателей ты видишь в течение смены. По остальным итоговый результат позже появится в отчётах у директора, но на него влияют твои действия сегодня.</p></div>
           <h3>Видишь во время смены</h3>
           <div class="shift-cheatsheet-grid">
             <article><b>Выручка ↓</b><p>Проверь трафик и средний чек. Работай с тем, который снизился.</p></article>
