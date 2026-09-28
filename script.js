@@ -477,12 +477,12 @@ function checkFinalLinks() {
 }
 
 const RESTAURANT_ZONE_DATA = {
-  hall: { place:'01 · Зал', title:'Сотрудник в зале', text:'Создаёт комфорт, поддерживает чистоту и общается с Гостями.', metrics:['Гостевой опыт','Трафик'] },
-  cash: { place:'02 · Заказ', title:'Кассир', text:'Принимает заказ, помогает с выбором и предлагает дополнительные позиции.', metrics:['Выручка','Средний чек','Трафик'] },
-  kitchen: { place:'03 · Кухня', title:'Сотрудник кухни', text:'Готовит блюда по стандарту и правильно использует продукты.', metrics:['SOS','Food Cost','Гостевой опыт'] },
-  assembly: { place:'04 · Сборка', title:'Сотрудник сборки', text:'Быстро и правильно собирает заказ.', metrics:['SOS','Food Cost','Гостевой опыт'] },
-  handoff: { place:'05 · Выдача', title:'Сотрудник выдачи', text:'Проверяет заказ и вовремя передаёт его Гостю.', metrics:['SOS','Food Cost','Гостевой опыт'] },
-  manager: { place:'Управляющий сменой', title:'Видит → направляет → проверяет', text:'Смотрит показатели, находит проблемную зону и говорит сотруднику, что нужно проверить или исправить сейчас.', metrics:['Все показатели смены'] }
+  hall: { title:'Сотрудник в зале', text:'Создаёт комфорт, поддерживает чистоту и общается с Гостями.', metrics:['Гостевой опыт','Трафик'] },
+  cash: { title:'Кассир', text:'Принимает заказ, помогает с выбором и предлагает дополнительные позиции.', metrics:['Выручка','Средний чек','Трафик'] },
+  kitchen: { title:'Сотрудник кухни', text:'Готовит блюда по стандарту и правильно использует продукты.', metrics:['SOS','Food Cost','Гостевой опыт'] },
+  assembly: { title:'Сотрудник сборки', text:'Быстро и правильно собирает заказ.', metrics:['SOS','Food Cost','Гостевой опыт'] },
+  handoff: { title:'Сотрудник выдачи', text:'Проверяет заказ и вовремя передаёт его Гостю.', metrics:['SOS','Food Cost','Гостевой опыт'] },
+  manager: { place:'Управляющий сменой', title:'Видит → направляет → проверяет', text:'Смотрит показатели, находит проблемную зону и говорит сотруднику, что нужно проверить или исправить сейчас.', metrics:['Все показатели смены'], note:'В этом курсе ты познакомишься с каждым из них.' }
 };
 
 function selectRestaurantZone(zone) {
@@ -493,7 +493,9 @@ function selectRestaurantZone(zone) {
   });
   if (!panel || !data) return;
   const badges = data.metrics.map(metric => `<b>${metric}</b>`).join('');
-  panel.innerHTML = `<span>${data.place}</span><h3>${data.title}</h3><p>${data.text}</p><strong class="metric-caption">Показатели, на которые влияет</strong><div class="metric-badges">${badges}</div>`;
+  const place = data.place ? `<span>${data.place}</span>` : '';
+  const note = data.note ? `<small class="zone-note">${data.note}</small>` : '';
+  panel.innerHTML = `${place}<h3>${data.title}</h3><p>${data.text}</p><strong class="metric-caption">Показатели, на которые влияет</strong><div class="metric-badges">${badges}</div>${note}`;
 }
 
 function initRestaurantMap() {
