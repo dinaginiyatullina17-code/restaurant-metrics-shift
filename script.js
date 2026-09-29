@@ -12,7 +12,7 @@ const CHAPTER_NAMES = {
   productivity:'Производительность труда', summary:'Главное по теме'
 };
 
-const PROGRESS_KEY = 'restaurant_metrics_2_progress_v7';
+const PROGRESS_KEY = 'restaurant_metrics_2_progress_v8';
 const PAGE_REQUIREMENTS = {
   income: ['reveal-digital', 'income-feedback'],
   revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'guest-metrics-feedback'],
@@ -137,7 +137,7 @@ function initFadeIn() {
   });
 }
 
-function collectState() { return {version:7, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
+function collectState() { return {version:8, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
 
 function saveProgress() {
   const json = JSON.stringify(collectState());
@@ -161,11 +161,11 @@ function loadProgress() {
   if (json) {
     try {
       const state = JSON.parse(json);
-      if (state.version === 7 && typeof state.unlocked === 'number') {
+      if (state.version === 8 && typeof state.unlocked === 'number') {
         unlockedChapters = Math.max(1, Math.min(state.unlocked, CHAPTER_ORDER.length));
       }
-      if (state.version === 7 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
-      if (state.version === 7 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
+      if (state.version === 8 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
+      if (state.version === 8 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
   unlockedChapters = 1;
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const pageUrl = new URL(location.href);
   if (pageUrl.searchParams.get('reset') === '1') {
     try {
-      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7'].forEach(key => {
+      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8'].forEach(key => {
         localStorage.removeItem(key);
         localStorage.removeItem(key + '_completed');
       });
