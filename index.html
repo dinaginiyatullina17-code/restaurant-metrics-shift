@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20260929-2">
+  <link rel="stylesheet" href="style.css?v=20260929-3">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -121,7 +121,7 @@
           <p>К Digital-каналам относятся онлайн-заказы: мобильное приложение, собственная доставка, агрегаторы и другие цифровые способы заказа.</p>
         </section>
 
-        <details class="fact-reveal fade-in">
+        <details class="fact-reveal fade-in" id="reveal-digital" data-required-reveal>
           <summary><span>Интересный факт</span><strong>Почему Digital особенно важен?</strong><i>Раскрыть</i></summary>
           <div class="fact-visual" id="digital-fact">
             <div class="fact-stat"><strong>5 из 6</strong><span>Гостей в 2023 году заказывали через Digital-каналы</span></div>
@@ -178,21 +178,21 @@
 
         <section class="metric-explorer fade-in" aria-labelledby="metric-explorer-title">
           <div class="section-heading"><p>Если выручка отстаёт от цели, по трафику и среднему чеку можно понять, где искать причину. Открой нужную карточку и пройди проверки по порядку.</p><h2 id="metric-explorer-title">Показатель → что проверить → что сделать</h2></div>
-          <details class="metric-detail" open>
+          <details class="metric-detail" id="reveal-revenue" data-required-reveal>
             <summary><span class="metric-symbol" aria-hidden="true">₽</span> Выручка</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько денег принесли все оплаченные заказы. Наличные, карты, баллы «Спасибо» и короны уже учтены.</p>
               <div class="do-this"><span>Если ниже цели</span><ol><li>Открой Brave&amp;Bold и проверь трафик.</li><li>Проверь средний чек.</li><li>Работай с тем показателем, который снизился.</li></ol></div>
             </div>
           </details>
-          <details class="metric-detail">
+          <details class="metric-detail" id="reveal-traffic" data-required-reveal>
             <summary><span class="metric-symbol" aria-hidden="true">↗</span> Трафик</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько Гостей сделали заказ. Смотри в Brave&amp;Bold.</p>
               <div class="do-this"><span>Если снижается</span><ol><li>Посмотри динамику по часам: когда стало меньше заказов и как долго это продолжается.</li><li>Посмотри, что могло помешать Гостю прийти и сделать заказ: виден ли ресторан, горит ли свет и вывеска, открыт ли вход, работают ли касса и киоски.</li><li>Уточни, не изменилась ли ситуация рядом с рестораном: открылись ли конкуренты, работает ли реклама и действуют ли промо.</li><li>Передай директору то, что нельзя исправить во время смены. То, что зависит от команды, исправь сразу.</li></ol></div>
             </div>
           </details>
-          <details class="metric-detail">
+          <details class="metric-detail" id="reveal-average-check" data-required-reveal>
             <summary><span class="metric-symbol" aria-hidden="true">▤</span> Средний чек</summary>
             <div class="detail-body">
               <p><strong>Что показывает:</strong> сколько в среднем стоит один заказ. Смотри в Brave&amp;Bold.</p>
@@ -261,7 +261,7 @@
 
         <section class="sos-target fade-in"><div><span>Цель SOS</span><strong>3:10</strong><small>3 минуты 10 секунд</small></div><div><p><strong>Если SOS выше цели:</strong></p><ol><li>Найди западающую станцию.</li><li>Устрани проблему, которая мешает выполнять скорость обслуживания на этой станции.</li><li>Снова проверь SOS.</li></ol></div></section>
 
-        <figure class="report-figure fade-in">
+        <figure class="report-figure sos-report fade-in">
           <figcaption>SOS в Brave&amp;Bold</figcaption>
           <img class="report-image report-image-compact" src="assets/brave-sos.png?v=20260928-3" alt="Карточки скорости обслуживания в зале и доставке в Brave&amp;Bold" loading="lazy">
         </figure>
@@ -417,6 +417,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20260929-1"></script>
+  <script src="script.js?v=20260929-2"></script>
 </body>
 </html>

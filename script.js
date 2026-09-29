@@ -14,8 +14,8 @@ const CHAPTER_NAMES = {
 
 const PROGRESS_KEY = 'restaurant_metrics_2_progress_v7';
 const PAGE_REQUIREMENTS = {
-  income: ['income-feedback'],
-  revenue: ['average-check-feedback', 'guest-metrics-feedback'],
+  income: ['reveal-digital', 'income-feedback'],
+  revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'guest-metrics-feedback'],
   costs: ['cost-feedback'],
   profit: [],
   productivity: ['itph-feedback', 'seef-recall-feedback'],
@@ -49,11 +49,12 @@ function showCourseNotice(message, feedbackId) {
     noticeTimer = setTimeout(() => notice.classList.remove('show'), 4200);
   }
   if (!feedbackId) return;
-  const test = document.getElementById(feedbackId)?.closest('.exercise-card');
-  if (!test) return;
-  test.classList.add('needs-attention');
-  test.scrollIntoView({behavior:'smooth', block:'center'});
-  setTimeout(() => test.classList.remove('needs-attention'), 1800);
+  const requirement = document.getElementById(feedbackId);
+  const target = requirement?.matches('details') ? requirement : requirement?.closest('.exercise-card, .action-card');
+  if (!target) return;
+  target.classList.add('needs-attention');
+  target.scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(() => target.classList.remove('needs-attention'), 1800);
 }
 
 function unlockNextChapterIfReady(pageId) {
@@ -74,8 +75,17 @@ function navigateTo(pageId) {
   if (idx > currentIdx && currentIdx !== -1) {
     const missing = missingTests(currentPage);
     if (missing.length) {
-      showCourseNotice('Чтобы продолжить, пройди тест выше.', missing[0]);
+      showCourseNotice('Чтобы продолжить, открой все раскрывающиеся блоки и пройди тесты выше.', missing[0]);
       return;
+    }
+  }
+  if (idx > 0) {
+    for (let chapterIndex = 0; chapterIndex < idx; chapterIndex += 1) {
+      const missing = missingTests(CHAPTER_ORDER[chapterIndex]);
+      if (missing.length) {
+        showCourseNotice('Сначала заверши предыдущие модули: открой все раскрывающиеся блоки и пройди тесты.', missing[0]);
+        return;
+      }
     }
   }
   if (idx >= unlockedChapters) {
@@ -158,6 +168,11 @@ function loadProgress() {
       if (state.version === 7 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
+  unlockedChapters = 1;
+  for (let index = 0; index < CHAPTER_ORDER.length - 1; index += 1) {
+    if (missingTests(CHAPTER_ORDER[index]).length) break;
+    unlockedChapters = index + 2;
+  }
   applyHomeLocks();
   restoreTestStates();
 }
@@ -172,8 +187,19 @@ function applyHomeLocks() {
   });
 }
 
-function testIds() {
-  return [...new Set(Object.values(PAGE_REQUIREMENTS).flat())];
+function testIds() { return Object.keys(TEST_ANSWERS); }
+
+function initRequiredReveals() {
+  document.querySelectorAll('details[data-required-reveal]').forEach(details => {
+    details.addEventListener('toggle', () => {
+      if (!details.open || completedTests.has(details.id)) return;
+      completedTests.add(details.id);
+      details.classList.add('reveal-completed');
+      unlockNextChapterIfReady(currentPage);
+      saveProgress();
+    });
+    if (completedTests.has(details.id)) details.classList.add('reveal-completed');
+  });
 }
 
 function initAttemptNotes() {
@@ -552,6 +578,7 @@ document.addEventListener('DOMContentLoaded',() => {
   if (previewFocus) setTimeout(() => document.getElementById(previewFocus)?.scrollIntoView({behavior:'instant', block:'start'}), 120);
   applyHomeLocks();
   initAttemptNotes();
+  initRequiredReveals();
   initSortable();
   initZoneSort('idea-pool','zone-left','zone-right');
   shuffleChildren(document.getElementById('idea-pool'));
