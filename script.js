@@ -12,8 +12,9 @@ const CHAPTER_NAMES = {
   productivity:'Производительность труда', summary:'Главное по теме'
 };
 
-const PROGRESS_KEY = 'restaurant_metrics_2_progress_v8';
+const PROGRESS_KEY = 'restaurant_metrics_2_progress_v9';
 const PAGE_REQUIREMENTS = {
+  home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager'],
   income: ['reveal-digital', 'income-feedback'],
   revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'guest-metrics-feedback'],
   costs: ['cost-feedback'],
@@ -50,7 +51,11 @@ function showCourseNotice(message, feedbackId) {
   }
   if (!feedbackId) return;
   const requirement = document.getElementById(feedbackId);
-  const target = requirement?.matches('details') ? requirement : requirement?.closest('.exercise-card, .action-card');
+  const target = requirement?.matches('details')
+    ? requirement
+    : requirement?.matches('.employee-hotspot')
+      ? requirement.closest('.restaurant-map')
+      : requirement?.closest('.exercise-card, .action-card');
   if (!target) return;
   target.classList.add('needs-attention');
   target.scrollIntoView({behavior:'smooth', block:'center'});
@@ -72,6 +77,13 @@ function navigateTo(pageId) {
   if (!PAGES.includes(pageId)) return;
   const idx = CHAPTER_ORDER.indexOf(pageId);
   const currentIdx = CHAPTER_ORDER.indexOf(currentPage);
+  if (currentPage === 'home' && idx >= 0) {
+    const missing = missingTests('home');
+    if (missing.length) {
+      showCourseNotice('Сначала нажми на всех сотрудников на картинке.', missing[0]);
+      return;
+    }
+  }
   if (idx > currentIdx && currentIdx !== -1) {
     const missing = missingTests(currentPage);
     if (missing.length) {
@@ -99,6 +111,7 @@ function navigateTo(pageId) {
   document.getElementById('top-nav')?.classList.toggle('home-hidden', pageId === 'home');
   target.classList.add('active');
   currentPage = pageId;
+  unlockNextChapterIfReady(pageId);
   window.scrollTo({top:0, behavior:'instant'});
 
   const chapterLabel = document.getElementById('nav-chapter');
@@ -137,7 +150,7 @@ function initFadeIn() {
   });
 }
 
-function collectState() { return {version:8, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
+function collectState() { return {version:9, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
 
 function saveProgress() {
   const json = JSON.stringify(collectState());
@@ -161,11 +174,11 @@ function loadProgress() {
   if (json) {
     try {
       const state = JSON.parse(json);
-      if (state.version === 8 && typeof state.unlocked === 'number') {
+      if (state.version === 9 && typeof state.unlocked === 'number') {
         unlockedChapters = Math.max(1, Math.min(state.unlocked, CHAPTER_ORDER.length));
       }
-      if (state.version === 8 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
-      if (state.version === 8 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
+      if (state.version === 9 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
+      if (state.version === 9 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
   unlockedChapters = 1;
@@ -175,6 +188,9 @@ function loadProgress() {
   }
   applyHomeLocks();
   restoreTestStates();
+  document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => {
+    hotspot.classList.toggle('viewed', completedTests.has(hotspot.id));
+  });
 }
 
 function applyHomeLocks() {
@@ -426,6 +442,26 @@ function resetZonePool(poolId,...zoneIds) {
   zoneIds.forEach(id => document.getElementById(id)?.querySelectorAll('.drag-chip').forEach(chip => pool.appendChild(chip)));
   shuffleChildren(pool);
 }
+function resetZoneTest(poolId,zoneIds,feedbackId) {
+  resetZonePool(poolId,...zoneIds);
+  completedTests.delete(feedbackId);
+  testAttempts[feedbackId] = 0;
+  const feedback = document.getElementById(feedbackId);
+  const test = feedback?.closest('.exercise-card');
+  if (feedback) { feedback.className = 'feedback-box'; feedback.innerHTML = ''; }
+  if (test) {
+    test.classList.remove('test-completed');
+    test.querySelectorAll('button, input, select').forEach(control => { control.disabled = false; });
+  }
+  updateAttemptNote(feedbackId);
+  unlockedChapters = 1;
+  for (let index = 0; index < CHAPTER_ORDER.length - 1; index += 1) {
+    if (missingTests(CHAPTER_ORDER[index]).length) break;
+    unlockedChapters = index + 2;
+  }
+  applyHomeLocks();
+  saveProgress();
+}
 function shuffleChildren(element) {
   if (!element) return;
   const children = [...element.children];
@@ -525,9 +561,15 @@ function selectRestaurantZone(zone) {
 
 function initRestaurantMap() {
   document.querySelectorAll('.employee-hotspot[data-zone]').forEach(hotspot => {
-    hotspot.addEventListener('click', () => selectRestaurantZone(hotspot.dataset.zone));
+    hotspot.addEventListener('click', () => {
+      selectRestaurantZone(hotspot.dataset.zone);
+      completedTests.add(hotspot.id);
+      hotspot.classList.add('viewed');
+      saveProgress();
+    });
     hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
     hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
+    if (completedTests.has(hotspot.id)) hotspot.classList.add('viewed');
   });
 }
 
@@ -558,7 +600,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const pageUrl = new URL(location.href);
   if (pageUrl.searchParams.get('reset') === '1') {
     try {
-      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8'].forEach(key => {
+      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8','restaurant_metrics_2_progress_v9'].forEach(key => {
         localStorage.removeItem(key);
         localStorage.removeItem(key + '_completed');
       });
