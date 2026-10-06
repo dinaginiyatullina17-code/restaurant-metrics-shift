@@ -14,7 +14,7 @@ const CHAPTER_NAMES = {
 
 const PROGRESS_KEY = 'restaurant_metrics_2_progress_v10';
 const PAGE_REQUIREMENTS = {
-  home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager', 'team-overview-opened'],
+  home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager'],
   income: ['reveal-digital', 'income-feedback'],
   revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'guest-metrics-feedback'],
   costs: ['cost-feedback'],
@@ -106,11 +106,7 @@ function navigateTo(pageId) {
   if (currentPage === 'home' && idx >= 0) {
     const missing = missingTests('home');
     if (missing.length) {
-      if (missing.length === 1 && missing[0] === 'team-overview-opened') {
-        showCourseNotice('Открой блок с показателями всей смены, затем нажми «Перейти к модулю 1».');
-      } else {
-        showCourseNotice('Сначала нажми на каждую метку сотрудника на картинке.', missing.find(id => id !== 'team-overview-opened'));
-      }
+      showCourseNotice('Сначала нажми на карточку каждого сотрудника на картинке.', missing[0]);
       return;
     }
   }
@@ -221,12 +217,6 @@ function loadProgress() {
   document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => {
     hotspot.classList.toggle('viewed', completedTests.has(hotspot.id));
   });
-  if (completedTests.has('team-overview-opened')) {
-    const panel = document.getElementById('team-overview');
-    if (panel) panel.hidden = false;
-    const button = document.getElementById('open-team-overview');
-    if (button) button.innerHTML = 'Скрыть показатели всей смены <span aria-hidden="true">−</span>';
-  }
   refreshHomeContinue();
 }
 
