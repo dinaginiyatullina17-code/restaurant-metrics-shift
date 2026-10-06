@@ -12,7 +12,7 @@ const CHAPTER_NAMES = {
   productivity:'Производительность труда', summary:'Главное по теме'
 };
 
-const PROGRESS_KEY = 'restaurant_metrics_2_progress_v11';
+const PROGRESS_KEY = 'restaurant_metrics_2_progress_v12';
 const PAGE_REQUIREMENTS = {
   home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager'],
   income: ['reveal-digital', 'income-feedback'],
@@ -168,7 +168,7 @@ function initFadeIn() {
   });
 }
 
-function collectState() { return {version:11, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
+function collectState() { return {version:12, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
 
 function saveProgress() {
   const json = JSON.stringify(collectState());
@@ -187,19 +187,19 @@ function loadProgress() {
     try { json = SCORM.get('cmi.suspend_data') || ''; } catch (_) {}
   }
   if (!json) {
-    try { json = localStorage.getItem(PROGRESS_KEY) || localStorage.getItem('restaurant_metrics_2_progress_v10') || ''; } catch (_) {}
+    try { json = localStorage.getItem(PROGRESS_KEY) || localStorage.getItem('restaurant_metrics_2_progress_v11') || localStorage.getItem('restaurant_metrics_2_progress_v10') || ''; } catch (_) {}
   }
   if (json) {
     try {
       const state = JSON.parse(json);
-      if ((state.version === 10 || state.version === 11) && typeof state.unlocked === 'number') {
+      if ([10,11,12].includes(state.version) && typeof state.unlocked === 'number') {
         unlockedChapters = Math.max(1, Math.min(state.unlocked, CHAPTER_ORDER.length));
       }
-      if ((state.version === 10 || state.version === 11) && Array.isArray(state.completed)) completedTests = new Set(state.completed);
-      if (state.version === 10) {
+      if ([10,11,12].includes(state.version) && Array.isArray(state.completed)) completedTests = new Set(state.completed);
+      if (state.version === 10 || state.version === 11) {
         ['map-hall','map-cash','map-kitchen','map-assembly','map-handoff','map-manager','team-overview-opened'].forEach(id => completedTests.delete(id));
       }
-      if ((state.version === 10 || state.version === 11) && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
+      if ([10,11,12].includes(state.version) && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
   unlockedChapters = 1;
@@ -215,7 +215,7 @@ function loadProgress() {
     hotspot.classList.toggle('needs-viewing', !viewed);
   });
   refreshHomeContinue();
-  if (json && (() => { try { return JSON.parse(json).version === 10; } catch (_) { return false; } })()) saveProgress();
+  if (json && (() => { try { return JSON.parse(json).version < 12; } catch (_) { return false; } })()) saveProgress();
 }
 
 function applyHomeLocks() {
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const pageUrl = new URL(location.href);
   if (pageUrl.searchParams.get('reset') === '1') {
     try {
-      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8','restaurant_metrics_2_progress_v9','restaurant_metrics_2_progress_v10','restaurant_metrics_2_progress_v11'].forEach(key => {
+      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8','restaurant_metrics_2_progress_v9','restaurant_metrics_2_progress_v10','restaurant_metrics_2_progress_v11','restaurant_metrics_2_progress_v12'].forEach(key => {
         localStorage.removeItem(key);
         localStorage.removeItem(key + '_completed');
       });
