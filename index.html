@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20261006-8">
+  <link rel="stylesheet" href="style.css?v=20261006-9">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -44,6 +44,7 @@
           <span class="eyebrow">Зачем этот курс</span>
           <h2>Показатели помогают понять, как идёт смена</h2>
           <p>Ты узнаешь, на что смотреть, если что-то пошло не так, и какие действия помогут команде.</p>
+          <p class="course-duration">Время прохождения — 15 минут</p>
           <div class="hook-question"><span aria-hidden="true">?</span><div><strong>Что проверить и кому дать задачу?</strong><p>Показатели помогут быстро подсветить место сбоя, а тебе нужно будет проанализировать ситуацию и выбрать действие.</p></div></div>
         </section>
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
@@ -77,13 +78,12 @@
             <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь в модулях курса.</p>
           </section>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div></div>
-          <button class="btn-next map-continue-button" id="continue-from-map" type="button" onclick="navigateTo('income')" disabled>Перейти к модулю 1 <span aria-hidden="true">→</span></button>
         </section>
 
         <section class="course-map fade-in" aria-labelledby="course-map-title">
-          <div class="section-heading"><span class="eyebrow">Время прохождения: 15 минут</span><h2 id="course-map-title">Давай изучим показатели подробнее</h2></div>
+          <div class="section-heading"><h2 id="course-map-title">Давай изучим показатели подробнее</h2></div>
           <div class="course-timeline" aria-label="Шесть модулей курса">
-            <svg class="course-route-line" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="route-gradient" x1="0" x2="1"><stop offset="0" stop-color="#6d35df"/><stop offset="1" stop-color="#e51b72"/></linearGradient></defs><path d="M0 170 C45 170 55 170 100 170 S255 70 300 70 S455 170 500 170 S655 70 700 70 S855 170 900 170 S1055 70 1100 70 S1160 70 1200 70"/></svg>
+            <div class="course-route-line" aria-hidden="true"></div>
             <button class="chapter-card" id="home-card-1" type="button" onclick="navigateTo('income')"><span class="chapter-num">1</span><strong>Выручка</strong></button>
             <button class="chapter-card" id="home-card-2" type="button" onclick="navigateTo('revenue')"><span class="chapter-num">2</span><strong>Что влияет на выручку</strong></button>
             <button class="chapter-card" id="home-card-3" type="button" onclick="navigateTo('costs')"><span class="chapter-num">3</span><strong>Затраты</strong></button>
@@ -91,6 +91,9 @@
             <button class="chapter-card" id="home-card-5" type="button" onclick="navigateTo('productivity')"><span class="chapter-num">5</span><strong>Работа команды</strong></button>
             <button class="chapter-card" id="home-card-6" type="button" onclick="navigateTo('summary')"><span class="chapter-num">6</span><strong>Итоги</strong></button>
           </div>
+        </section>
+        <section class="home-start" id="home-start" hidden>
+          <button class="btn-next map-continue-button" id="continue-from-map" type="button" onclick="navigateTo('income')" disabled>Начать курс <span aria-hidden="true">→</span></button>
         </section>
       </div>
     </div>
@@ -149,17 +152,11 @@
     </div>
 
     <div class="page" id="page-revenue">
-      <header class="chapter-hero chapter-orange">
+      <header class="chapter-hero chapter-purple">
         <div class="chapter-hero-inner"><span class="chapter-index">02 / 06</span><h1>Что влияет<br>на выручку</h1><p>Трафик и средний чек</p></div>
       </header>
       <div class="content-wrap wide-content">
-        <section class="revenue-module-map fade-in" aria-label="Что изучим в модуле о выручке">
-          <span class="eyebrow">Сначала целое, затем детали</span>
-          <h2>Разберём, от чего зависит выручка и что может изменить поведение Гостя</h2>
-          <p class="revenue-module-lead">Выручка показывает общий результат продаж. Чтобы понять, почему она меняется, сначала разберём трафик и средний чек, а затем — как опыт в ресторане влияет на желание Гостя вернуться.</p>
-          <p class="revenue-module-transition">Сначала разберём выручку на цифрах, а потом посмотрим, какие части опыта Гостя могут повлиять на будущие заказы.</p>
-          <div class="revenue-module-steps"><article><b>1</b><strong>Выручка</strong><small>общий результат</small></article><i aria-hidden="true">→</i><article><b>2</b><strong>Трафик и средний чек</strong><small>из чего она складывается</small></article><i aria-hidden="true">→</i><article><b>3</b><strong>Гостевой опыт и SOS</strong><small>что помогает Гостю вернуться</small></article></div>
-        </section>
+        <p class="lead revenue-module-lead fade-in">В этом модуле разберём, как количество заказов и средний чек формируют выручку, а Гостевой опыт влияет на будущие посещения.</p>
         <section class="revenue-equation fade-in" aria-label="Формула выручки">
           <div class="equation-main"><span>Выручка</span><small>= товарооборот</small></div><span class="equation-sign">=</span><div class="equation-part"><strong>Трафик</strong><small>количество Гостей</small></div><span class="equation-sign">×</span><div class="equation-part"><strong>Средний чек</strong><small>стоимость заказа</small></div>
         </section>
@@ -249,7 +246,10 @@
           <div class="course-note-text"><p><strong>Работу с отчётами по Гостевому опыту ты изучал раньше в курсе «Гостемания, работа с отчетами для АУП и выше».</strong> Вернись к нему, если хочешь вспомнить материал. Если ты ещё не проходил этот курс, пройди его.</p></div>
         </section>
 
-        <section class="lesson-block sos-guest-link fade-in"><p><strong>Скорость обслуживания — SOS</strong> — один из факторов Гостевого опыта. Если заказ долго ждёт на станции, Гость дольше ждёт выдачи. SOS показывает время от чека до выдачи последней позиции заказа. Его значение смотри в Brave&amp;Bold.</p></section>
+        <aside class="sos-note fade-in" aria-label="Связь SOS с Гостевым опытом">
+          <span>Один из факторов Гостевого опыта</span>
+          <p><strong>Скорость обслуживания — SOS.</strong> Если заказ долго ждёт на станции, Гость дольше ждёт выдачи. SOS показывает время от чека до выдачи последней позиции заказа. Его значение смотри в Brave&amp;Bold.</p>
+        </aside>
 
         <section class="station-scene fade-in" aria-label="Путь заказа по станциям ресторана">
           <div class="station-scene-copy"><h2>Где заказ замедлился?</h2><p>Сигнал SOS показывает задержку. Шифт смотрит на путь заказа и находит западающую станцию.</p></div>
@@ -414,6 +414,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20261006-8"></script>
+  <script src="script.js?v=20261006-9"></script>
 </body>
 </html>

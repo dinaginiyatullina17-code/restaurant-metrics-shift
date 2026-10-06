@@ -45,11 +45,13 @@ function refreshHomeContinue() {
   const button = document.getElementById('continue-from-map');
   const gate = document.getElementById('employee-gate-hint');
   const teamBlock = document.getElementById('map-next-step');
+  const startBlock = document.getElementById('home-start');
   const ready = missingTests('home').length === 0;
   if (button) button.disabled = !ready;
   if (gate) gate.hidden = ready;
   if (teamBlock) teamBlock.hidden = !ready;
   if (teamBlock) teamBlock.classList.toggle('visible', ready);
+  if (startBlock) startBlock.hidden = !ready;
 }
 
 function showCourseNotice(message, feedbackId) {
@@ -204,7 +206,11 @@ function loadProgress() {
   }
   applyHomeLocks();
   restoreTestStates();
-  document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => hotspot.classList.remove('viewed'));
+  document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => {
+    const viewed = completedTests.has(hotspot.id);
+    hotspot.classList.toggle('viewed', viewed);
+    hotspot.classList.toggle('needs-viewing', !viewed);
+  });
   refreshHomeContinue();
 }
 
@@ -579,11 +585,15 @@ function initRestaurantMap() {
     hotspot.addEventListener('click', () => {
       selectRestaurantZone(hotspot.dataset.zone);
       completedTests.add(hotspot.id);
+      hotspot.classList.remove('needs-viewing', 'active');
+      hotspot.classList.add('viewed');
       refreshHomeContinue();
       saveProgress();
     });
     hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
+    hotspot.addEventListener('mouseleave', () => hotspot.classList.remove('active'));
     hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
+    hotspot.addEventListener('blur', () => hotspot.classList.remove('active'));
   });
 }
 
