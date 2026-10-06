@@ -844,3 +844,16 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .revenue-story-guest{background:#f1eff8}
 @media(max-width:760px){.course-hook-heading .course-duration{font-size:11.5px}.revenue-story{grid-template-columns:1fr;gap:10px}.revenue-story-band{min-height:112px;padding:15px}.revenue-story-band>div{gap:7px}.revenue-story-band strong,.revenue-story-band b{padding:8px 9px;font-size:14px}}
 @media(max-width:430px){.course-hook-heading .course-duration{font-size:10.5px}}
+
+/* Keep the team indicators unboxed and make both equations read as one line. */
+.map-next-step .team-overview{margin:12px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important}
+.map-next-step .team-overview-next{margin:14px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important}
+.restaurant-result .restaurant-result-formula{margin:16px 0 4px;display:flex;flex-wrap:nowrap;gap:clamp(6px,1.5vw,16px);align-items:center;justify-content:center;white-space:nowrap}
+.restaurant-result-formula strong,.restaurant-result-formula b{font-size:clamp(15px,3vw,36px);line-height:1.1}
+.restaurant-result-formula i{flex:0 0 auto;font-size:clamp(19px,3vw,36px)}
+.profit-main-formula{width:fit-content;max-width:100%;margin:14px 0;padding:12px 16px;display:flex;flex-wrap:nowrap;gap:clamp(6px,1.2vw,13px);align-items:center;border:1px solid #ddd7e7;border-radius:14px;color:#393344;background:#f0edf4;font-size:clamp(15px,2.2vw,24px);line-height:1.15;white-space:nowrap}
+.profit-main-formula strong,.profit-main-formula span{font-family:var(--font-head);font-weight:850}
+.profit-main-formula i{color:#6d56df;font-style:normal;font-weight:900}
+.revenue-story-guest>div{gap:7px}
+.revenue-story-guest strong{max-width:185px}
+@media(max-width:520px){.restaurant-result{padding:24px 12px}.restaurant-result .restaurant-result-formula{gap:6px}.restaurant-result-formula strong,.restaurant-result-formula b{font-size:clamp(14px,4.2vw,21px)}.restaurant-result-formula i{font-size:19px}.profit-main-formula{gap:6px;padding:10px 11px;font-size:clamp(13px,4vw,18px)}.revenue-story-guest strong{max-width:100%}}
