@@ -828,3 +828,19 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .course-timeline .course-step-arrow{flex:0 0 18px;margin-top:12px;color:#8d80bd;font-size:19px;font-weight:600;text-align:center}
 @media(max-width:760px){.course-hook-heading{align-items:flex-start}.course-hook-heading .course-duration{padding-top:2px;font-size:10px}.course-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px}.course-timeline .chapter-card{min-height:88px;padding:8px 4px;justify-content:flex-start;border:1px solid #e6e1ee;border-radius:13px;background:#fff}.course-timeline .chapter-card .chapter-num{width:36px;height:36px;flex-basis:36px;font-size:15px}.course-timeline .chapter-card strong{max-width:125px;font-size:11px}.course-timeline .course-step-arrow{display:none}}
 @media(max-width:430px){.course-hook-heading{gap:8px}.course-hook-heading .course-duration{max-width:112px;font-size:9px;text-align:right}.course-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Final content polish: shared team indicators and a visual revenue story */
+.course-hook-heading .course-duration{font-size:13px}
+.team-overview-title{margin:0 0 12px;font-family:var(--font-head);font-size:clamp(25px,3vw,34px);line-height:1.15}
+.team-overview-next{margin:16px 0 0;padding:0;color:#51486b!important;background:transparent!important;font-weight:600;line-height:1.5}
+.profit-definition .profit-keyword{color:#393344;background:#f0edf4;border:1px solid #ddd7e7}
+.revenue-story{margin:10px 0 32px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.revenue-story-band{min-height:140px;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:16px;border:1px solid #e1dced;border-radius:18px;background:#f5f2fa}
+.revenue-story-band>span{color:#7664be;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.revenue-story-band>div{display:flex;flex-wrap:wrap;gap:9px;align-items:center;justify-content:center}
+.revenue-story-band strong,.revenue-story-band b{padding:10px 12px;border-radius:12px;color:#403653;background:#fff;font-family:var(--font-head);font-size:clamp(14px,1.6vw,19px);line-height:1.2;text-align:center;box-shadow:0 2px 8px rgba(42,30,64,.06)}
+.revenue-story-band b{color:#fff;background:#7968e8}
+.revenue-story-band i{color:#7968e8;font-size:20px;font-style:normal;font-weight:900}
+.revenue-story-guest{background:#f1eff8}
+@media(max-width:760px){.course-hook-heading .course-duration{font-size:11.5px}.revenue-story{grid-template-columns:1fr;gap:10px}.revenue-story-band{min-height:112px;padding:15px}.revenue-story-band>div{gap:7px}.revenue-story-band strong,.revenue-story-band b{padding:8px 9px;font-size:14px}}
+@media(max-width:430px){.course-hook-heading .course-duration{font-size:10.5px}}

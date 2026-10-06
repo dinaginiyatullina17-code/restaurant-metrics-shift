@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20261006-10">
+  <link rel="stylesheet" href="style.css?v=20261006-12">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -64,8 +64,7 @@
         <p class="employee-gate-hint" id="employee-gate-hint" role="status">Изучи карточки всех сотрудников: пока не посмотришь каждого, перейти к модулю 1 не получится.</p>
 
         <section class="map-next-step fade-in" id="map-next-step" aria-label="Показатели всей команды" hidden>
-          <h2>Показатели всей команды</h2>
-          <p>За ними Шифт следит в течение смены — они отражают общую работу ресторана.</p>
+          <h2 class="team-overview-title">Также в зоне ответственности Шифта</h2>
           <section class="team-overview" id="team-overview">
             <div class="responsibility-group direct-control">
               <div class="team-overview-grid three-items">
@@ -74,8 +73,8 @@
                 <article><b>Коммунальные расходы</b><p>Контроль использования оборудования, света и воды.</p></article>
               </div>
             </div>
-            <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь в модулях курса.</p>
           </section>
+          <p class="team-overview-next">За ними Шифт следит в течение смены — они отражают общую работу ресторана. Подробнее об этих и других показателях ты узнаешь в модулях курса.</p>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div></div>
         </section>
 
@@ -159,9 +158,9 @@
         <div class="chapter-hero-inner"><span class="chapter-index">02 / 06</span><h1>Что влияет<br>на выручку</h1><p>Трафик и средний чек</p></div>
       </header>
       <div class="content-wrap wide-content">
-        <p class="lead revenue-module-lead fade-in">В этом модуле разберём, как количество заказов и средний чек формируют выручку, а Гостевой опыт влияет на будущие посещения.</p>
-        <section class="revenue-equation fade-in" aria-label="Формула выручки">
-          <div class="equation-main"><span>Выручка</span><small>= товарооборот</small></div><span class="equation-sign">=</span><div class="equation-part"><strong>Трафик</strong><small>количество Гостей</small></div><span class="equation-sign">×</span><div class="equation-part"><strong>Средний чек</strong><small>стоимость заказа</small></div>
+        <section class="revenue-story fade-in" aria-label="Как продажи и Гостевой опыт связаны с выручкой">
+          <div class="revenue-story-band revenue-story-sales"><span>Выручка за смену</span><div><strong>Трафик</strong><i>×</i><strong>Средний чек</strong><i>=</i><b>Выручка</b></div></div>
+          <div class="revenue-story-band revenue-story-guest"><span>Будущие посещения</span><div><strong>Гостевой опыт</strong><i>→</i><strong>желание вернуться</strong><i>→</i><strong>новые заказы</strong></div></div>
         </section>
         <p class="lead fade-in"><strong>Ресторан зарабатывает — это выручка.</strong> Она складывается из трафика и среднего чека.</p>
         <section class="revenue-example fade-in" aria-label="Пример среднего чека и выручки">
@@ -317,13 +316,13 @@
         <section class="definition-card profit-definition fade-in">
           <span>А теперь — о результате</span>
           <strong class="profit-keyword">Прибыль = выручка − затраты</strong>
-          <p>В течение смены ты влияешь на выручку и затраты. По итогам периода директор видит, сколько денег осталось у ресторана после оплаты всех расходов.</p>
+          <p>В течение смены ты влияешь на выручку и затраты. По итогам периода директор видит, сколько чистых денег заработал ресторан.</p>
         </section>
         <p class="fade-in">Чтобы директору оценить общий результат ресторана, в отчёте отдельно показывают три уровня прибыли. Каждый следующий учитывает больше расходов.</p>
         <section class="profit-stack fade-in" aria-label="Три вида прибыли">
-          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p>Показывает, сколько выручки осталось после затрат на продукты и упаковку.</p><div class="profit-formula"><b>Маржинальная прибыль</b><i>=</i><strong>Выручка</strong><i>−</i><strong>FC</strong></div><p class="management-impact"><strong>Твоё действие:</strong> выполняй план по выручке, продавай маржинальные блюда, контролируй приготовление, упаковку и списания.</p></div></article>
-          <article><span>02</span><div><h2>Операционная прибыль</h2><p>Показывает, сколько осталось после продуктов, упаковки и оплаты труда команды.</p><div class="profit-formula"><b>Операционная прибыль</b><i>=</i><strong>Маржинальная прибыль</strong><i>−</i><strong>LC</strong></div><p class="management-impact"><strong>Твоё действие:</strong> учитывай текущую нагрузку при расстановке команды и проверяй отметки в Биосмарт.</p></div></article>
-          <article><span>03</span><div><h2>EBITDA</h2><p>Показывает, сколько осталось после основных расходов ресторана, включая коммунальные услуги и ремонт.</p><div class="profit-formula"><b>EBITDA</b><i>=</i><strong>Операционная прибыль</strong><i>−</i><strong>прочие расходы</strong></div><p class="management-impact"><strong>Твоё действие:</strong> используй ресурсы бережно и следи за оборудованием, светом и водой.</p></div></article>
+          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p>Показывает, сколько выручки осталось после затрат на продукты и упаковку.</p><div class="profit-formula"><b>Маржинальная прибыль</b><i>=</i><strong>Выручка</strong><i>−</i><strong>FC</strong></div><p class="management-impact"><strong>Твоё действие на смене:</strong> выполняй план по выручке, продавай маржинальные блюда, контролируй приготовление, упаковку и списания.</p></div></article>
+          <article><span>02</span><div><h2>Операционная прибыль</h2><p>Показывает, сколько осталось после продуктов, упаковки и оплаты труда команды.</p><div class="profit-formula"><b>Операционная прибыль</b><i>=</i><strong>Маржинальная прибыль</strong><i>−</i><strong>LC</strong></div><p class="management-impact"><strong>Твоё действие на смене:</strong> учитывай текущую нагрузку при расстановке команды и проверяй отметки в Биосмарт.</p></div></article>
+          <article><span>03</span><div><h2>EBITDA</h2><p>Показывает, сколько осталось после основных расходов ресторана, включая коммунальные услуги и ремонт.</p><div class="profit-formula"><b>EBITDA</b><i>=</i><strong>Операционная прибыль</strong><i>−</i><strong>прочие расходы</strong></div><p class="management-impact"><strong>Твоё действие на смене:</strong> используй ресурсы бережно и следи за оборудованием, светом и водой.</p></div></article>
         </section>
         <p class="fade-in">Как управляющий сменой, ты не отслеживаешь маржу, операционную прибыль и EBITDA напрямую, но решения каждой смены влияют на их итоговые значения. С P&amp;L — отчётом о прибылях и убытках — работает директор ресторана.</p>
 
