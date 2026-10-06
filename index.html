@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20261006-6">
+  <link rel="stylesheet" href="style.css?v=20261006-8">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -61,11 +61,12 @@
           <div class="zone-popover" id="zone-popover" aria-live="polite"><span>Выбери сотрудника на картинке</span><strong>Здесь появится его карточка</strong></div>
         </section>
 
-        <section class="map-next-step fade-in" id="map-next-step" aria-label="Следующий шаг после карты сотрудников">
+        <p class="employee-gate-hint" id="employee-gate-hint" role="status">Изучи карточки всех сотрудников: пока не посмотришь каждого, перейти к модулю 1 не получится.</p>
 
-          <h2>Также в зоне ответственности Шифта</h2>
-          <p>Это показатели всей команды и ресторана, а не отдельного сотрудника.</p><section class="team-overview" id="team-overview" aria-labelledby="team-overview-title">
-            <div class="team-overview-heading"><span id="team-overview-title">Также в зоне ответственности Шифта</span></div>
+        <section class="map-next-step fade-in" id="map-next-step" aria-label="Показатели всей команды" hidden>
+          <h2>Показатели всей команды</h2>
+          <p>За ними Шифт следит в течение смены — они отражают общую работу ресторана.</p>
+          <section class="team-overview" id="team-overview">
             <div class="responsibility-group direct-control">
               <div class="team-overview-grid three-items">
                 <article><b>ITPH</b><p>Контроль нагрузки команды и решений по расстановке.</p></article>
@@ -76,12 +77,13 @@
             <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь в модулях курса.</p>
           </section>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div></div>
-          <p class="map-continue-hint">Посмотри карточку каждого сотрудника на картинке, затем переходи к первому модулю.</p><button class="btn-next map-continue-button" id="continue-from-map" type="button" onclick="navigateTo('income')" disabled>Перейти к модулю 1 <span aria-hidden="true">→</span></button>
+          <button class="btn-next map-continue-button" id="continue-from-map" type="button" onclick="navigateTo('income')" disabled>Перейти к модулю 1 <span aria-hidden="true">→</span></button>
         </section>
 
         <section class="course-map fade-in" aria-labelledby="course-map-title">
-          <div class="section-heading"><span class="eyebrow">Время прохождения: 15 минут</span><h2 id="course-map-title">План курса</h2></div>
+          <div class="section-heading"><span class="eyebrow">Время прохождения: 15 минут</span><h2 id="course-map-title">Давай изучим показатели подробнее</h2></div>
           <div class="course-timeline" aria-label="Шесть модулей курса">
+            <svg class="course-route-line" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="route-gradient" x1="0" x2="1"><stop offset="0" stop-color="#6d35df"/><stop offset="1" stop-color="#e51b72"/></linearGradient></defs><path d="M0 170 C45 170 55 170 100 170 S255 70 300 70 S455 170 500 170 S655 70 700 70 S855 170 900 170 S1055 70 1100 70 S1160 70 1200 70"/></svg>
             <button class="chapter-card" id="home-card-1" type="button" onclick="navigateTo('income')"><span class="chapter-num">1</span><strong>Выручка</strong></button>
             <button class="chapter-card" id="home-card-2" type="button" onclick="navigateTo('revenue')"><span class="chapter-num">2</span><strong>Что влияет на выручку</strong></button>
             <button class="chapter-card" id="home-card-3" type="button" onclick="navigateTo('costs')"><span class="chapter-num">3</span><strong>Затраты</strong></button>
@@ -412,6 +414,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20261006-6"></script>
+  <script src="script.js?v=20261006-8"></script>
 </body>
 </html>

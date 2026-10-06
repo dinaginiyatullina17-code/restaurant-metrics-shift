@@ -43,23 +43,13 @@ function missingTests(pageId) {
 
 function refreshHomeContinue() {
   const button = document.getElementById('continue-from-map');
-  if (button) button.disabled = missingTests('home').length > 0;
-}
-
-function toggleTeamOverview() {
-  const panel = document.getElementById('team-overview');
-  const button = document.getElementById('open-team-overview');
-  if (!panel || !button) return;
-  const open = panel.hidden;
-  panel.hidden = !open;
-  button.innerHTML = open ? 'Скрыть показатели всей смены <span aria-hidden="true">−</span>' : 'Показать показатели всей смены <span aria-hidden="true">＋</span>';
-  if (open) {
-    completedTests.add('team-overview-opened');
-    button.innerHTML = 'Скрыть показатели всей смены';
-    refreshHomeContinue();
-    saveProgress();
-    panel.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
+  const gate = document.getElementById('employee-gate-hint');
+  const teamBlock = document.getElementById('map-next-step');
+  const ready = missingTests('home').length === 0;
+  if (button) button.disabled = !ready;
+  if (gate) gate.hidden = ready;
+  if (teamBlock) teamBlock.hidden = !ready;
+  if (teamBlock) teamBlock.classList.toggle('visible', ready);
 }
 
 function showCourseNotice(message, feedbackId) {
@@ -106,7 +96,7 @@ function navigateTo(pageId) {
   if (currentPage === 'home' && idx >= 0) {
     const missing = missingTests('home');
     if (missing.length) {
-      showCourseNotice('Сначала нажми на карточку каждого сотрудника на картинке.', missing[0]);
+      showCourseNotice('Сначала изучи карточку каждого сотрудника на картинке. После этого сможешь перейти к модулю 1.', missing[0]);
       return;
     }
   }
@@ -214,9 +204,7 @@ function loadProgress() {
   }
   applyHomeLocks();
   restoreTestStates();
-  document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => {
-    hotspot.classList.toggle('viewed', completedTests.has(hotspot.id));
-  });
+  document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => hotspot.classList.remove('viewed'));
   refreshHomeContinue();
 }
 
@@ -591,14 +579,11 @@ function initRestaurantMap() {
     hotspot.addEventListener('click', () => {
       selectRestaurantZone(hotspot.dataset.zone);
       completedTests.add(hotspot.id);
-      hotspot.classList.add('viewed');
       refreshHomeContinue();
       saveProgress();
-      refreshHomeContinue();
     });
     hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
     hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
-    if (completedTests.has(hotspot.id)) hotspot.classList.add('viewed');
   });
 }
 

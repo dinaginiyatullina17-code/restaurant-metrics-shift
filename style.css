@@ -749,3 +749,35 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .sos-guest-link{padding-block:8px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .sos-guest-link p{margin:0}
 @media(max-width:760px){.course-timeline{gap:7px}.course-timeline .chapter-card{flex:1 1 calc(50% - 8px);padding:9px}.course-timeline .chapter-card strong{font-size:13px}.restaurant-result>div{display:flex;flex-wrap:wrap}.restaurant-result strong{font-size:clamp(24px,6vw,36px)}}
+
+/* Employee completion gate */
+.employee-gate-hint{max-width:950px;margin:18px auto;padding:14px 18px;border-left:5px solid #7968e8;border-radius:0 13px 13px 0;background:#f2effb;color:#40355f;font-weight:750;line-height:1.45;text-align:center}
+.employee-gate-hint[hidden],.map-next-step[hidden]{display:none!important}
+.employee-hotspot.viewed{box-shadow:0 4px 16px rgba(34,15,10,.4)}
+.map-next-step h2{margin-top:0}
+.team-overview{border:1px solid #dce3ef;background:#eef3f8}
+.team-overview-grid.three-items article{border:1px solid #dde3ed;border-top:5px solid #8473da;background:#fff}
+.direct-control .team-overview-grid b{color:#5546a8}
+.team-overview-next{background:#e9eef6;color:#3f4d60}
+
+/* A winding, phase-style route through the six course modules */
+.course-timeline{position:relative;width:100%;max-width:1120px;height:330px;margin:12px auto 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible}
+.course-timeline:before{display:none}
+.course-route-line{position:absolute;inset:28px 0 auto;width:100%;height:240px;overflow:visible;pointer-events:none}
+.course-route-line path{fill:none;stroke:url(#route-gradient);stroke-width:24;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 7px 9px rgba(98,37,186,.15))}
+.course-timeline .chapter-card{position:absolute;width:16%;min-height:0;padding:0;display:flex;flex-direction:column;gap:7px;align-items:center;justify-content:flex-start;border:0;border-radius:0;background:transparent;text-align:center;overflow:visible;box-shadow:none;transform:translateX(-50%)}
+.course-timeline .chapter-card:after{display:none}
+.course-timeline .chapter-card:nth-of-type(1){left:8.333%;top:167px}
+.course-timeline .chapter-card:nth-of-type(2){left:25%;top:67px}
+.course-timeline .chapter-card:nth-of-type(3){left:41.667%;top:167px}
+.course-timeline .chapter-card:nth-of-type(4){left:58.333%;top:67px}
+.course-timeline .chapter-card:nth-of-type(5){left:75%;top:167px}
+.course-timeline .chapter-card:nth-of-type(6){left:91.667%;top:67px}
+.course-timeline .chapter-card .chapter-num{width:62px;height:62px;flex:0 0 62px;margin:0;border:6px solid #fff;border-radius:50%;display:grid;place-items:center;color:#771ac7;background:linear-gradient(145deg,#fff,#f7f1ff);box-shadow:0 0 0 5px #8116d1,0 8px 18px rgba(43,26,63,.17);font-family:var(--font-head);font-size:23px}
+.course-timeline .chapter-card strong{max-width:160px;padding:0;color:#5a315f;font-family:var(--font-head);font-size:15px;line-height:1.15}
+.course-timeline .chapter-card.locked{opacity:.5;filter:grayscale(.5)}
+.course-timeline .chapter-card:not(.locked) .chapter-num{box-shadow:0 0 0 5px #cb248e,0 8px 18px rgba(43,26,63,.17)}
+.course-timeline .chapter-card .card-arrow,.course-timeline .chapter-card .lock-badge{display:none}
+.map-next-step .team-overview{margin-top:12px}
+@media(max-width:760px){.course-timeline{height:auto;min-height:0;padding:8px 0;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(130px,auto));gap:10px}.course-route-line{display:none}.course-timeline .chapter-card{position:relative;left:auto!important;top:auto!important;width:auto;min-height:120px;padding:14px 8px;transform:none;align-self:stretch;justify-content:center;border:1px solid #e4dbea;border-radius:16px;background:#fff}.course-timeline .chapter-card:nth-of-type(n){grid-row:auto}.course-timeline .chapter-card .chapter-num{width:52px;height:52px;flex-basis:52px;border-width:5px;font-size:20px}.course-timeline .chapter-card strong{max-width:110px;font-size:13px}}
+@media(max-width:480px){.course-timeline{min-height:470px;grid-template-rows:repeat(2,220px)}.course-route-line{height:420px}.course-timeline .chapter-card .chapter-num{width:44px;height:44px;flex-basis:44px;border-width:4px}.course-timeline .chapter-card strong{font-size:12px}.employee-gate-hint{padding:12px;font-size:14px}}
