@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20261006-9">
+  <link rel="stylesheet" href="style.css?v=20261006-10">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -41,10 +41,9 @@
 
       <div class="content-wrap home-content">
         <section class="course-hook fade-in">
-          <span class="eyebrow">Зачем этот курс</span>
+          <div class="course-hook-heading"><span class="eyebrow">Зачем этот курс</span><span class="course-duration">Время прохождения — 15 минут</span></div>
           <h2>Показатели помогают понять, как идёт смена</h2>
           <p>Ты узнаешь, на что смотреть, если что-то пошло не так, и какие действия помогут команде.</p>
-          <p class="course-duration">Время прохождения — 15 минут</p>
           <div class="hook-question"><span aria-hidden="true">?</span><div><strong>Что проверить и кому дать задачу?</strong><p>Показатели помогут быстро подсветить место сбоя, а тебе нужно будет проанализировать ситуацию и выбрать действие.</p></div></div>
         </section>
         <section class="restaurant-map fade-in" aria-labelledby="shift-architecture-title">
@@ -83,12 +82,16 @@
         <section class="course-map fade-in" aria-labelledby="course-map-title">
           <div class="section-heading"><h2 id="course-map-title">Давай изучим показатели подробнее</h2></div>
           <div class="course-timeline" aria-label="Шесть модулей курса">
-            <div class="course-route-line" aria-hidden="true"></div>
             <button class="chapter-card" id="home-card-1" type="button" onclick="navigateTo('income')"><span class="chapter-num">1</span><strong>Выручка</strong></button>
+            <span class="course-step-arrow" aria-hidden="true">→</span>
             <button class="chapter-card" id="home-card-2" type="button" onclick="navigateTo('revenue')"><span class="chapter-num">2</span><strong>Что влияет на выручку</strong></button>
+            <span class="course-step-arrow" aria-hidden="true">→</span>
             <button class="chapter-card" id="home-card-3" type="button" onclick="navigateTo('costs')"><span class="chapter-num">3</span><strong>Затраты</strong></button>
+            <span class="course-step-arrow" aria-hidden="true">→</span>
             <button class="chapter-card" id="home-card-4" type="button" onclick="navigateTo('profit')"><span class="chapter-num">4</span><strong>Прибыль</strong></button>
+            <span class="course-step-arrow" aria-hidden="true">→</span>
             <button class="chapter-card" id="home-card-5" type="button" onclick="navigateTo('productivity')"><span class="chapter-num">5</span><strong>Работа команды</strong></button>
+            <span class="course-step-arrow" aria-hidden="true">→</span>
             <button class="chapter-card" id="home-card-6" type="button" onclick="navigateTo('summary')"><span class="chapter-num">6</span><strong>Итоги</strong></button>
           </div>
         </section>
@@ -414,6 +417,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20261006-9"></script>
+  <script src="script.js?v=20261006-11"></script>
 </body>
 </html>
