@@ -12,9 +12,9 @@ const CHAPTER_NAMES = {
   productivity:'Производительность труда', summary:'Главное по теме'
 };
 
-const PROGRESS_KEY = 'restaurant_metrics_2_progress_v9';
+const PROGRESS_KEY = 'restaurant_metrics_2_progress_v10';
 const PAGE_REQUIREMENTS = {
-  home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager'],
+  home: ['map-hall', 'map-cash', 'map-kitchen', 'map-assembly', 'map-handoff', 'map-manager', 'team-overview-opened'],
   income: ['reveal-digital', 'income-feedback'],
   revenue: ['reveal-revenue', 'reveal-traffic', 'reveal-average-check', 'average-check-feedback', 'guest-metrics-feedback'],
   costs: ['cost-feedback'],
@@ -41,6 +41,27 @@ function missingTests(pageId) {
   return (PAGE_REQUIREMENTS[pageId] || []).filter(id => !completedTests.has(id));
 }
 
+function refreshHomeContinue() {
+  const button = document.getElementById('continue-from-map');
+  if (button) button.disabled = missingTests('home').length > 0;
+}
+
+function toggleTeamOverview() {
+  const panel = document.getElementById('team-overview');
+  const button = document.getElementById('open-team-overview');
+  if (!panel || !button) return;
+  const open = panel.hidden;
+  panel.hidden = !open;
+  button.innerHTML = open ? 'Скрыть показатели всей смены <span aria-hidden="true">−</span>' : 'Показать показатели всей смены <span aria-hidden="true">＋</span>';
+  if (open) {
+    completedTests.add('team-overview-opened');
+    button.innerHTML = 'Скрыть показатели всей смены';
+    refreshHomeContinue();
+    saveProgress();
+    panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+}
+
 function showCourseNotice(message, feedbackId) {
   const notice = document.getElementById('course-notice');
   if (notice) {
@@ -49,7 +70,12 @@ function showCourseNotice(message, feedbackId) {
     clearTimeout(noticeTimer);
     noticeTimer = setTimeout(() => notice.classList.remove('show'), 4200);
   }
-  if (!feedbackId) return;
+  if (!feedbackId) {
+    document.getElementById('map-next-step')?.scrollIntoView({behavior:'smooth', block:'center'});
+    document.getElementById('map-next-step')?.classList.add('needs-attention');
+    setTimeout(() => document.getElementById('map-next-step')?.classList.remove('needs-attention'), 1800);
+    return;
+  }
   const requirement = document.getElementById(feedbackId);
   const target = requirement?.matches('details')
     ? requirement
@@ -80,7 +106,11 @@ function navigateTo(pageId) {
   if (currentPage === 'home' && idx >= 0) {
     const missing = missingTests('home');
     if (missing.length) {
-      showCourseNotice('Сначала нажми на всех сотрудников на картинке.', missing[0]);
+      if (missing.length === 1 && missing[0] === 'team-overview-opened') {
+        showCourseNotice('Открой блок с показателями всей смены, затем нажми «Перейти к модулю 1».');
+      } else {
+        showCourseNotice('Сначала нажми на каждую метку сотрудника на картинке.', missing.find(id => id !== 'team-overview-opened'));
+      }
       return;
     }
   }
@@ -150,7 +180,7 @@ function initFadeIn() {
   });
 }
 
-function collectState() { return {version:9, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
+function collectState() { return {version:10, unlocked:unlockedChapters, completed:[...completedTests], attempts:testAttempts}; }
 
 function saveProgress() {
   const json = JSON.stringify(collectState());
@@ -174,11 +204,11 @@ function loadProgress() {
   if (json) {
     try {
       const state = JSON.parse(json);
-      if (state.version === 9 && typeof state.unlocked === 'number') {
+      if (state.version === 10 && typeof state.unlocked === 'number') {
         unlockedChapters = Math.max(1, Math.min(state.unlocked, CHAPTER_ORDER.length));
       }
-      if (state.version === 9 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
-      if (state.version === 9 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
+      if (state.version === 10 && Array.isArray(state.completed)) completedTests = new Set(state.completed);
+      if (state.version === 10 && state.attempts && typeof state.attempts === 'object') testAttempts = state.attempts;
     } catch (_) {}
   }
   unlockedChapters = 1;
@@ -191,6 +221,13 @@ function loadProgress() {
   document.querySelectorAll('.employee-hotspot[id]').forEach(hotspot => {
     hotspot.classList.toggle('viewed', completedTests.has(hotspot.id));
   });
+  if (completedTests.has('team-overview-opened')) {
+    const panel = document.getElementById('team-overview');
+    if (panel) panel.hidden = false;
+    const button = document.getElementById('open-team-overview');
+    if (button) button.innerHTML = 'Скрыть показатели всей смены <span aria-hidden="true">−</span>';
+  }
+  refreshHomeContinue();
 }
 
 function applyHomeLocks() {
@@ -565,7 +602,9 @@ function initRestaurantMap() {
       selectRestaurantZone(hotspot.dataset.zone);
       completedTests.add(hotspot.id);
       hotspot.classList.add('viewed');
+      refreshHomeContinue();
       saveProgress();
+      refreshHomeContinue();
     });
     hotspot.addEventListener('mouseenter', () => selectRestaurantZone(hotspot.dataset.zone));
     hotspot.addEventListener('focus', () => selectRestaurantZone(hotspot.dataset.zone));
@@ -600,7 +639,7 @@ document.addEventListener('DOMContentLoaded',() => {
   const pageUrl = new URL(location.href);
   if (pageUrl.searchParams.get('reset') === '1') {
     try {
-      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8','restaurant_metrics_2_progress_v9'].forEach(key => {
+      ['restaurant_metrics_2_progress','restaurant_metrics_2_progress_v2','restaurant_metrics_2_progress_v3','restaurant_metrics_2_progress_v4','restaurant_metrics_2_progress_v5','restaurant_metrics_2_progress_v6','restaurant_metrics_2_progress_v7','restaurant_metrics_2_progress_v8','restaurant_metrics_2_progress_v9','restaurant_metrics_2_progress_v10'].forEach(key => {
         localStorage.removeItem(key);
         localStorage.removeItem(key + '_completed');
       });

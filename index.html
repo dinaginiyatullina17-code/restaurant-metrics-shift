@@ -7,7 +7,7 @@
   <meta name="description" content="Практический курс для Шифт смены: какие показатели есть в ресторане, что на них влияет и что делать при отклонении.">
   <title>Показатели ресторана для Шифт смены</title>
   <link rel="stylesheet" href="css/kuds.css?v=20260928-3">
-  <link rel="stylesheet" href="style.css?v=20260929-4">
+  <link rel="stylesheet" href="style.css?v=20261006-2">
   <link rel="stylesheet" href="restaurant-theme.css?v=20260928-3">
   <style>
     html, body { margin: 0 !important; padding: 0 !important; }
@@ -59,7 +59,14 @@
             <figcaption>Нажимай на метки сотрудников, чтобы увидеть их влияние на показатели.</figcaption>
           </figure>
           <div class="zone-popover" id="zone-popover" aria-live="polite"><span>Выбери сотрудника на картинке</span><strong>Здесь появится его карточка</strong></div>
-          <section class="team-overview" aria-labelledby="team-overview-title">
+        </section>
+
+        <section class="map-next-step fade-in" id="map-next-step" aria-label="Следующий шаг после карты сотрудников">
+          <span class="map-next-step-kicker">Следующий шаг · вся команда</span>
+          <h2>Есть показатели, за которыми Шифт следит на протяжении смены</h2>
+          <p>Это общие показатели команды и ресторана, а не показатели одного сотрудника. Нажми, чтобы посмотреть, что ещё входит в работу Шифта.</p>
+          <button class="btn-next map-next-button" id="open-team-overview" type="button" onclick="toggleTeamOverview()">Показать показатели всей смены <span aria-hidden="true">＋</span></button>
+          <section class="team-overview" id="team-overview" aria-labelledby="team-overview-title" hidden>
             <div class="team-overview-heading"><span id="team-overview-title">Также в зоне ответственности Шифта</span></div>
             <div class="responsibility-group direct-control">
               <div class="team-overview-grid three-items">
@@ -68,35 +75,21 @@
                 <article><b>Коммунальные расходы</b><p>Контроль использования оборудования, света и воды.</p></article>
               </div>
             </div>
-            <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь дальше.</p>
+            <p class="team-overview-next">Подробнее об этих и других показателях ты узнаешь в модулях курса.</p>
           </section>
           <div class="restaurant-result"><span>Итог работы смены</span><div><strong>Ресторан зарабатывает</strong><i>−</i><strong>Ресторан тратит</strong><i>=</i><strong>Прибыль</strong></div></div>
+          <button class="btn-next map-continue-button" id="continue-from-map" type="button" onclick="navigateTo('income')" disabled>Перейти к модулю 1 <span aria-hidden="true">→</span></button>
         </section>
 
         <section class="course-map fade-in" aria-labelledby="course-map-title">
-          <div class="course-duration" id="course-map-title">
-            <div><span>Время прохождения</span><small>6 коротких модулей</small></div>
-            <strong>15 минут</strong>
-          </div>
-          <div class="chapter-grid">
-            <button class="chapter-card" id="home-card-1" type="button" onclick="navigateTo('income')">
-              <span class="chapter-num">01</span><span class="chapter-meta">Доходы</span><strong>Доходы ресторана</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
-            <button class="chapter-card" id="home-card-2" type="button" onclick="navigateTo('revenue')">
-              <span class="chapter-num">02</span><span class="chapter-meta">Выручка</span><strong>Что влияет на выручку</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
-            <button class="chapter-card" id="home-card-3" type="button" onclick="navigateTo('costs')">
-              <span class="chapter-num">03</span><span class="chapter-meta">Затраты</span><strong>Виды затрат ресторана</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
-            <button class="chapter-card" id="home-card-4" type="button" onclick="navigateTo('profit')">
-              <span class="chapter-num">04</span><span class="chapter-meta">Результат</span><strong>Как действия смены влияют на прибыль</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
-            <button class="chapter-card" id="home-card-5" type="button" onclick="navigateTo('productivity')">
-              <span class="chapter-num">05</span><span class="chapter-meta">Команда</span><strong>Производительность труда</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
-            <button class="chapter-card" id="home-card-6" type="button" onclick="navigateTo('summary')">
-              <span class="chapter-num">06</span><span class="chapter-meta">Итог</span><strong>Главное по теме</strong><span class="card-arrow">→</span><span class="lock-badge">●</span>
-            </button>
+          <div class="section-heading"><span class="eyebrow">Маршрут курса · около 15 минут</span><h2 id="course-map-title">Вот что ты узнаешь по порядку</h2><p>Открывай модули по очереди: сначала разберём выручку, затем затраты, решения смены и общий итог.</p></div>
+          <div class="course-timeline">
+            <button class="chapter-card" id="home-card-1" type="button" onclick="navigateTo('income')"><span class="chapter-num">01</span><span class="chapter-meta">Старт</span><strong>Доходы ресторана</strong><small>Выручка и каналы продаж</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
+            <button class="chapter-card" id="home-card-2" type="button" onclick="navigateTo('revenue')"><span class="chapter-num">02</span><span class="chapter-meta">Дальше</span><strong>Что влияет на выручку</strong><small>Трафик, средний чек и Гостевой опыт</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
+            <button class="chapter-card" id="home-card-3" type="button" onclick="navigateTo('costs')"><span class="chapter-num">03</span><span class="chapter-meta">Затраты</span><strong>Виды затрат ресторана</strong><small>FC, LC и другие расходы</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
+            <button class="chapter-card" id="home-card-4" type="button" onclick="navigateTo('profit')"><span class="chapter-num">04</span><span class="chapter-meta">Результат</span><strong>Как действия смены влияют на прибыль</strong><small>Что остаётся после затрат</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
+            <button class="chapter-card" id="home-card-5" type="button" onclick="navigateTo('productivity')"><span class="chapter-num">05</span><span class="chapter-meta">Команда</span><strong>Производительность труда</strong><small>ITPH и расстановка команды</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
+            <button class="chapter-card" id="home-card-6" type="button" onclick="navigateTo('summary')"><span class="chapter-num">06</span><span class="chapter-meta">Финиш</span><strong>Главное по теме</strong><small>Свяжем показатели и решения</small><span class="card-arrow">→</span><span class="lock-badge">●</span></button>
           </div>
         </section>
       </div>
@@ -160,14 +153,20 @@
         <div class="chapter-hero-inner"><span class="chapter-index">02 / 06</span><h1>Что влияет<br>на выручку</h1><p>Трафик и средний чек</p></div>
       </header>
       <div class="content-wrap wide-content">
+        <section class="revenue-module-map fade-in" aria-label="Что изучим в модуле о выручке">
+          <span class="eyebrow">Сначала целое, затем детали</span>
+          <h2>Разберём, от чего зависит выручка и что может изменить поведение Гостя</h2>
+          <div class="revenue-module-steps"><article><b>1</b><strong>Выручка</strong><small>общий результат</small></article><i aria-hidden="true">→</i><article><b>2</b><strong>Трафик и средний чек</strong><small>из чего она складывается</small></article><i aria-hidden="true">→</i><article><b>3</b><strong>Гостевой опыт и SOS</strong><small>что помогает Гостю вернуться</small></article></div>
+        </section>
         <section class="revenue-equation fade-in" aria-label="Формула выручки">
           <div class="equation-main"><span>Выручка</span><small>= товарооборот</small></div><span class="equation-sign">=</span><div class="equation-part"><strong>Трафик</strong><small>количество Гостей</small></div><span class="equation-sign">×</span><div class="equation-part"><strong>Средний чек</strong><small>стоимость заказа</small></div>
         </section>
         <p class="lead fade-in"><strong>Ресторан зарабатывает — это выручка.</strong> Она складывается из трафика и среднего чека.</p>
-        <section class="revenue-example fade-in" aria-label="Простой пример расчёта выручки">
-          <span>Простой пример</span><h2>В ресторан пришли два Гостя</h2>
-          <div class="revenue-example-orders"><article><small>Заказ первого Гостя</small><strong>500 ₽</strong></article><i>+</i><article><small>Заказ второго Гостя</small><strong>500 ₽</strong></article></div>
-          <div class="revenue-example-result"><p><b>Трафик</b><strong>2 заказа</strong></p><p><b>Средний чек</b><strong>500 ₽</strong></p><p><b>Выручка</b><strong>1 000 ₽</strong></p></div>
+        <section class="revenue-example fade-in" aria-label="Пример среднего чека и выручки">
+          <span>На простом примере</span><h2>Два заказа — две разные суммы</h2>
+          <div class="revenue-example-orders"><article><small>Заказ первого Гостя</small><strong>600 ₽</strong></article><i>+</i><article><small>Заказ второго Гостя</small><strong>400 ₽</strong></article></div>
+          <div class="revenue-example-result"><p><b>Трафик</b><strong>2 заказа</strong></p><p><b>Средний чек</b><strong>(600 ₽ + 400 ₽) ÷ 2 = 500 ₽</strong><small>Складываем суммы двух заказов и делим на 2. Это среднее, а не сумма каждого заказа.</small></p><p><b>Выручка</b><strong>600 ₽ + 400 ₽ = 1 000 ₽</strong></p></div>
+          <p class="revenue-example-note">500 ₽ — это среднее по двум заказам, а не сумма каждого заказа. Один Гость потратил больше среднего, другой — меньше.</p>
         </section>
         <p class="fade-in">Оба показателя смотри в Brave&amp;Bold: трафик показывает количество заказов, а средний чек — среднюю стоимость одного заказа.</p>
 
@@ -211,8 +210,8 @@
           <div class="feedback-box" id="average-check-feedback" aria-live="polite"></div>
         </section>
 
-        <section class="lesson-block fade-in">
-          <h2>Как Гостевой опыт влияет на трафик</h2>
+        <section class="lesson-block guest-traffic-bridge fade-in">
+          <span class="eyebrow">Связываем показатели</span><h2>Гостевой опыт влияет на будущий трафик</h2>
           <p>Трафик зависит и от того, вернётся ли Гость снова. Гость с большей вероятностью вернётся, если заказ был быстрым, вкусным и корректно собранным, а в ресторане было чисто и приятно.</p>
         </section>
 
@@ -248,10 +247,10 @@
           <div class="course-note-text"><p><strong>Работу с отчётами по Гостевому опыту ты изучал раньше в курсе «Гостемания, работа с отчетами для АУП и выше».</strong> Вернись к нему, если хочешь вспомнить материал. Если ты ещё не проходил этот курс, пройди его.</p></div>
         </section>
 
-        <section class="sos-intro fade-in">
-          <span>Следующий показатель</span>
+        <section class="sos-intro sos-guest-link fade-in">
+          <span>Один из факторов Гостевого опыта</span>
           <h2>Скорость обслуживания — SOS</h2>
-          <p>Скорость — часть Гостевого опыта, но у неё есть отдельный показатель. SOS считается с момента, когда Гость получил чек, до выдачи последней позиции заказа. Отслеживай его в Brave&amp;Bold.</p>
+          <p>Если заказ долго ждёт на станции, Гость дольше ждёт выдачи. SOS показывает эту скорость отдельно: от чека до выдачи последней позиции заказа. Отслеживай его в Brave&amp;Bold.</p>
         </section>
 
         <section class="station-scene fade-in" aria-label="Путь заказа по станциям ресторана">
@@ -275,7 +274,7 @@
           </div>
           <div class="feedback-box" id="guest-metrics-feedback" aria-live="polite"></div>
         </section>
-        <section class="summary-card fade-in"><span class="eyebrow">Коротко о главном</span><h2>Про управление выручкой</h2><ul class="check-list"><li>Показатели помогают тебе понять, над чем нужно поработать, чтобы достичь целей по выручке.</li><li>Выручка складывается из количества заказов и их стоимости, поэтому ты отвечаешь за цели по трафику и среднему чеку.</li><li>Трафик растёт не только за счёт новых Гостей: хороший Гостевой опыт помогает постоянным Гостям возвращаться.</li></ul></section>
+        <section class="summary-card fade-in"><span class="eyebrow">Коротко о главном</span><h2>Про управление выручкой</h2><ul class="check-list"><li>Показатели помогают тебе понять, над чем нужно поработать, чтобы достичь цели по выручке.</li><li>Выручка складывается из количества заказов и их стоимости. Смотри цель по трафику и фактический средний чек.</li><li>Гостевой опыт влияет на то, вернётся ли Гость, а скорость обслуживания — часть этого опыта.</li></ul></section>
         <div class="chapter-nav"><button class="btn-secondary" type="button" onclick="navigateTo('income')">← Назад</button><button class="btn-next" type="button" onclick="navigateTo('costs')">Следующая глава →</button></div>
       </div>
     </div>
@@ -315,15 +314,15 @@
       <header class="chapter-hero chapter-brown"><div class="chapter-hero-inner"><span class="chapter-index">04 / 06</span><h1>Как действия смены<br>влияют на прибыль</h1><p>Что остаётся после затрат ресторана</p></div></header>
       <div class="content-wrap">
         <section class="definition-card profit-definition fade-in">
-          <span>Ресторан зарабатывает выручку и несёт затраты</span>
-          <strong class="profit-keyword">Прибыль</strong>
-          <p>Это то, что остаётся, когда из выручки вычли затраты ресторана.</p>
+          <span>От выручки к итогу ресторана</span>
+          <strong class="profit-keyword">Прибыль = выручка − затраты</strong>
+          <p>В течение смены ты влияешь на выручку и затраты. В конце периода директор видит, сколько осталось ресторану после расходов.</p>
         </section>
-        <p class="fade-in">Запоминать расчёты не нужно. Запомни, какие действия смены влияют на каждый результат.</p>
+        <p class="fade-in">Чтобы директору оценить общий результат ресторана, в отчёте отдельно показывают три уровня прибыли. Каждый следующий учитывает больше расходов.</p>
         <section class="profit-stack fade-in" aria-label="Три вида прибыли">
-          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p><strong>Просто:</strong> из выручки вычли продукты и упаковку — FC.</p><p class="management-impact"><strong>Твоё действие:</strong> выполняй цель по выручке, продавай маржинальные блюда, контролируй приготовление, упаковку и списания.</p></div></article>
-          <article><span>02</span><div><h2>Операционная прибыль</h2><p><strong>Просто:</strong> из маржи вычли оплату часов команды — LC.</p><p class="management-impact"><strong>Твоё действие:</strong> сопоставляй количество сотрудников с потоком заказов и проверяй отметки в Биосмарт.</p></div></article>
-          <article><span>03</span><div><h2>EBITDA</h2><p><strong>Просто:</strong> из результата вычли остальные расходы ресторана.</p><p class="management-impact"><strong>Твоё действие:</strong> экономно используй ресурсы и следи за оборудованием.</p></div></article>
+          <article><span>01</span><div><h2>Маржинальная прибыль</h2><p>Показывает, сколько выручки осталось после затрат на продукты и упаковку.</p><div class="profit-formula"><b>Маржинальная прибыль</b><i>=</i><strong>Выручка</strong><i>−</i><strong>FC</strong></div><p class="management-impact"><strong>Твоё действие:</strong> выполняй план по выручке, продавай маржинальные блюда, контролируй приготовление, упаковку и списания.</p></div></article>
+          <article><span>02</span><div><h2>Операционная прибыль</h2><p>Показывает, сколько осталось после продуктов, упаковки и оплаты труда команды.</p><div class="profit-formula"><b>Операционная прибыль</b><i>=</i><strong>Маржинальная прибыль</strong><i>−</i><strong>LC</strong></div><p class="management-impact"><strong>Твоё действие:</strong> учитывай текущую нагрузку при расстановке команды и проверяй отметки в Биосмарт.</p></div></article>
+          <article><span>03</span><div><h2>EBITDA</h2><p>Показывает, сколько осталось после основных расходов ресторана, включая коммунальные услуги и ремонт.</p><div class="profit-formula"><b>EBITDA</b><i>=</i><strong>Операционная прибыль</strong><i>−</i><strong>прочие расходы</strong></div><p class="management-impact"><strong>Твоё действие:</strong> используй ресурсы бережно и следи за оборудованием, светом и водой.</p></div></article>
         </section>
         <p class="fade-in">Как управляющий сменой, ты не отслеживаешь маржу, операционную прибыль и EBITDA напрямую, но решения каждой смены влияют на их итоговые значения. С P&amp;L — отчётом о прибылях и убытках — работает директор ресторана.</p>
         
@@ -357,12 +356,12 @@
           <div class="section-heading"><h2 id="shift-cheatsheet-title">Что делать с показателями на смене</h2><p>Слева — показатели, которые можно увидеть во время смены. Справа — результаты, на которые влияют действия команды сегодня.</p></div>
           <div class="shift-dashboard">
             <section class="dashboard-group live"><h3><span aria-hidden="true">◉</span> Вижу во время смены</h3><div class="dashboard-list">
-              <article><i aria-hidden="true">₽</i><div><b>Выручка ↓</b><p>Проверь трафик и средний чек.</p></div></article>
-              <article><i aria-hidden="true">↗</i><div><b>Трафик ↓</b><p>Проверь, что мешает Гостю прийти или сделать заказ.</p></div></article>
-              <article><i aria-hidden="true">▤</i><div><b>Средний чек ↓</b><p>Проверь состав заказов и дай фокус продаж.</p></div></article>
-              <article><i aria-hidden="true">★</i><div><b>Гостевой опыт ↓</b><p>Найди слабый фактор и исправь его.</p></div></article>
+              <article><i aria-hidden="true">₽</i><div><b>Выручка</b><p>Сравни выручку с целью; для поиска причины смотри трафик и фактический средний чек.</p></div></article>
+              <article><i aria-hidden="true">↗</i><div><b>Трафик</b><p>Проверь, что мешает Гостю прийти или сделать заказ.</p></div></article>
+              <article><i aria-hidden="true">▤</i><div><b>Средний чек</b><p>Проверь состав заказов и дай фокус продаж.</p></div></article>
+              <article><i aria-hidden="true">★</i><div><b>Гостевой опыт</b><p>Найди слабый фактор и исправь его.</p></div></article>
               <article><i aria-hidden="true">◷</i><div><b>SOS выше цели</b><p>Найди западающую станцию и устрани причину.</p></div></article>
-              <article><i aria-hidden="true">↕</i><div><b>ITPH не в цели</b><p>Оцени нагрузку и скорректируй работу команды.</p></div></article>
+              <article><i aria-hidden="true">↕</i><div><b>ITPH</b><p>Сравни с планом и оцени нагрузку команды.</p></div></article>
             </div></section>
             <div class="dashboard-manager" aria-label="Управляющий сменой"><img class="manager-avatar" src="assets/shift-manager-v8.png?v=20260928-1" alt="Управляющий сменой в чёрной форме"><b>Управляющий сменой</b><small>видит → решает → направляет</small></div>
             <section class="dashboard-group influence"><h3><span aria-hidden="true">◆</span> Влияю действиями</h3><div class="dashboard-list">
@@ -417,6 +416,6 @@
     </div>
   </main>
 
-  <script src="script.js?v=20260929-4"></script>
+  <script src="script.js?v=20261006-2"></script>
 </body>
 </html>
