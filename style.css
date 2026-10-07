@@ -878,3 +878,13 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .profit-stack article:first-child .profit-formula>strong{font-size:clamp(10px,1.45vw,16px);line-height:1.2}
 .profit-stack article:first-child .profit-formula>i{font-size:clamp(13px,1.7vw,19px)}
 @media(max-width:760px){.channel-icon-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.channel-icon-card{padding:5px 8px 12px}.channel-icon{width:min(100%,150px)}.channel-icon-card strong{font-size:13px}}
+
+/* Compact sales-channel pictograms */
+.channel-icon-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:center}
+.channel-icon-card{padding:0;border:0;border-radius:0;background:transparent}
+.channel-icon{width:66px;max-width:100%}
+.channel-icon-card strong{font-size:12px;line-height:1.2}
+.channel-icon-card--text-only{align-self:center;min-height:auto;padding:10px 8px;border-left:1px solid #ded9e8}
+.channel-icon-card--text-only strong{max-width:120px;color:#51447d}
+@media(max-width:760px){.channel-icon-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 6px}.channel-icon-card{padding:0}.channel-icon{width:66px}.channel-icon-card strong{font-size:12px}.channel-icon-card--text-only{border-left:0}}
+@media(max-width:430px){.channel-icon-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 4px}}
