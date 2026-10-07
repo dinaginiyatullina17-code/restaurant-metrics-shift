@@ -857,3 +857,24 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible {
 .revenue-story-guest>div{gap:7px}
 .revenue-story-guest strong{max-width:185px}
 @media(max-width:520px){.restaurant-result{padding:24px 12px}.restaurant-result .restaurant-result-formula{gap:6px}.restaurant-result-formula strong,.restaurant-result-formula b{font-size:clamp(14px,4.2vw,21px)}.restaurant-result-formula i{font-size:19px}.profit-main-formula{gap:6px;padding:10px 11px;font-size:clamp(13px,4vw,18px)}.revenue-story-guest strong{max-width:100%}}
+
+/* Sales channel icons and profit formula clarity */
+.revenue-definition>span{color:#cfc5ff;font-size:clamp(12px,2.8vw,30px);letter-spacing:-.025em;white-space:nowrap}
+.channel-icon-grid{margin:18px 0 8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.channel-icon-card{min-width:0;padding:8px 10px 14px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;border:1px solid #e1dced;border-radius:16px;background:#f7f5fa;text-align:center}
+.channel-icon{display:block;width:min(100%,132px);aspect-ratio:3/4;background-image:url("assets/channel-sales-icons-v1.png?v=1");background-repeat:no-repeat;background-size:400% 200%}
+.channel-icon-card strong{max-width:170px;color:#393344;font-family:var(--font-head);font-size:clamp(12px,1.25vw,15px);line-height:1.2}
+.channel-icon-card:nth-child(1) .channel-icon{background-position:0% 0%}
+.channel-icon-card:nth-child(2) .channel-icon{background-position:33.333% 0%}
+.channel-icon-card:nth-child(3) .channel-icon{background-position:66.666% 0%}
+.channel-icon-card:nth-child(4) .channel-icon{background-position:100% 0%}
+.channel-icon-card:nth-child(5) .channel-icon{background-position:0% 100%}
+.channel-icon-card:nth-child(6) .channel-icon{background-position:33.333% 100%}
+.channel-icon-card:nth-child(7) .channel-icon{background-position:66.666% 100%}
+.profit-definition p.profit-bridge{margin:0 0 12px;font-family:var(--font-body);font-size:clamp(16px,2vw,20px);line-height:1.45}
+.profit-main-formula,.profit-main-formula *{color:#393344!important}
+.profit-stack article:first-child .profit-formula{width:fit-content;max-width:100%;flex-wrap:nowrap;gap:clamp(4px,1vw,10px);white-space:nowrap}
+.profit-stack article:first-child .profit-formula>b{width:auto;flex:0 0 auto;color:#393344;font-size:clamp(10px,1.45vw,16px)}
+.profit-stack article:first-child .profit-formula>strong{font-size:clamp(10px,1.45vw,16px);line-height:1.2}
+.profit-stack article:first-child .profit-formula>i{font-size:clamp(13px,1.7vw,19px)}
+@media(max-width:760px){.channel-icon-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.channel-icon-card{padding:5px 8px 12px}.channel-icon{width:min(100%,150px)}.channel-icon-card strong{font-size:13px}}
